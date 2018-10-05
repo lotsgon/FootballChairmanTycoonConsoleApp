@@ -1,0 +1,102 @@
+[
+	{
+		"ClubID": "1",
+		"ClubName": "Chelsea",
+		"ClubNameAbreviation": "CHE"
+	},
+	{
+		"ClubID": "2",
+		"ClubName": "Arsenal",
+		"ClubNameAbreviation": "ARS"
+	},
+	{
+		"ClubID": "3",
+		"ClubName": "Tottenham Hotspur",
+		"ClubNameAbreviation": "TOT"
+	},
+	{
+		"ClubID": "4",
+		"ClubName": "West Ham United",
+		"ClubNameAbreviation": "WHU"
+	},
+	{
+		"ClubID": "5",
+		"ClubName": "Crystal Palace",
+		"ClubNameAbreviation": "CRY"
+	},
+	{
+		"ClubID": "6",
+		"ClubName": "Manchester United",
+		"ClubNameAbreviation": "MUN"
+	},
+	{
+		"ClubID": "7",
+		"ClubName": "Manchester City",
+		"ClubNameAbreviation": "MCI"
+	},
+	{
+		"ClubID": "8",
+		"ClubName": "Everton",
+		"ClubNameAbreviation": "EVE"
+	},
+	{
+		"ClubID": "9",
+		"ClubName": "Liverpool",
+		"ClubNameAbreviation": "LIV"
+	},
+	{
+		"ClubID": "10",
+		"ClubName": "West Bromwich Albion",
+		"ClubNameAbreviation": "WBA"
+	},
+	{
+		"ClubID": "11",
+		"ClubName": "Newcastle United",
+		"ClubNameAbreviation": "NEW"
+	},
+	{
+		"ClubID": "12",
+		"ClubName": "Stoke City",
+		"ClubNameAbreviation": "STK"
+	},
+	{
+		"ClubID": "13",
+		"ClubName": "Southampton",
+		"ClubNameAbreviation": "SOU"
+	},
+	{
+		"ClubID": "14",
+		"ClubName": "Leicester City",
+		"ClubNameAbreviation": "LEI"
+	},
+	{
+		"ClubID": "15",
+		"ClubName": "Bournemouth",
+		"ClubNameAbreviation": "BOU"
+	},
+	{
+		"ClubID": "16",
+		"ClubName": "Watford",
+		"ClubNameAbreviation": "WAT"
+	},
+	{
+		"ClubID": "17",
+		"ClubName": "Brighton & Hove Albion",
+		"ClubNameAbreviation": null
+	},
+	{
+		"ClubID": "18",
+		"ClubName": "Burnley",
+		"ClubNameAbreviation": "BUR"
+	},
+	{
+		"ClubID": "19",
+		"ClubName": "Huddersfield Town",
+		"ClubNameAbreviation": null
+	},
+	{
+		"ClubID": "20",
+		"ClubName": "Swansea",
+		"ClubNameAbreviation": "SWA"
+	}
+]
