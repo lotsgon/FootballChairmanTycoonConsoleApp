@@ -17,16 +17,19 @@ namespace FootballChairmanTycoonConsoleApp
                 club.UpdateSquadList(squadList);
             }
 
-            Console.WriteLine(playerList[0].PlayerValue);
+            //Console.WriteLine(playerList[0].PlayerValue);
 
-            Console.WriteLine(clubList[0].ClubName);
-            foreach(FootballPlayer player in clubList[0].ClubSquad)
-            {
-                Console.WriteLine(player.PlayerFullName);
-                Console.WriteLine(player.PlayerAge);
-                Console.WriteLine(player.PlayerOverallRating + "\n");
-            }
-            
+            //Console.WriteLine(clubList[0].ClubName);
+            //foreach(FootballPlayer player in clubList[0].ClubSquad)
+            //{
+            //    Console.WriteLine(player.PlayerFullName);
+            //    Console.WriteLine(player.PlayerAge);
+            //    Console.WriteLine(player.PlayerOverallRating + "\n");
+            //}
+
+            var result = MatchSimulation.GetMatchResult(clubList[0], clubList[12]);
+
+            Console.WriteLine($"You {result}!");
 
             Console.ReadLine();
         }
