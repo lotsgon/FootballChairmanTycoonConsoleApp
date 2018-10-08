@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace FootballChairmanTycoonConsoleApp.JsonData
@@ -10,8 +11,9 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
         public List<FootballClub> LeagueTeams { get; private set; }
         public List<LeagueFixtureRound> LeagueFixtures { get; set; }
 
-        public FootballLeague(string leagueNation, List<FootballClub> leagueTeams)
+        public FootballLeague(string leagueNation, List<FootballClub> leagueTeams, string leagueName)
         {
+            this.LeagueName = leagueName;
             this.LeagueNation = leagueNation;
             this.LeagueTeams = leagueTeams;
             this.LeagueFixtures = this.GenerateLeagueFixtures(LeagueTeams);
@@ -19,56 +21,115 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
 
         private List<LeagueFixtureRound> GenerateLeagueFixtures(List<FootballClub> leagueTeams)
         {
-            List<LeagueFixture> fixtures = new List<LeagueFixture>();
+            ShuffleTeamList(leagueTeams);
 
-            for (int homeTeamID = 0; homeTeamID < leagueTeams.Count; homeTeamID++)
-            {
-                for (int awayTeamID = 0; awayTeamID < leagueTeams.Count; awayTeamID++)
-                {
-                    var homeTeam = leagueTeams[homeTeamID];
-                    var awayTeam = leagueTeams[awayTeamID];
-
-                    if (homeTeam != awayTeam)
-                    {
-                        fixtures.Add(new LeagueFixture(homeTeam, awayTeam));
-                    }
-                }
-            }
-
-            fixtures.Reverse();
-
-            int leagueRounds = (leagueTeams.Count-1) * 2;
+            int halfLeagueRounds = leagueTeams.Count - 1;
             int matchesPerWeek = leagueTeams.Count / 2;
 
             List<LeagueFixtureRound> sortedLeagueFixtures = new List<LeagueFixtureRound>();
 
-            for (int leagueRound = 0; leagueRound < leagueRounds; leagueRound++)
+            for (int leagueRound = 1; leagueRound <= halfLeagueRounds; leagueRound++)
             {
-                List<LeagueFixture> roundFixtures = new List<LeagueFixture>();
+                sortedLeagueFixtures.Add(new LeagueFixtureRound(GetUniqueHomeFixtureRound(leagueRound, matchesPerWeek), leagueRound));
+            }
 
-                sortedLeagueFixtures.Add(new LeagueFixtureRound(GetUniqueFixtureRound(fixtures, matchesPerWeek), leagueRound + 1));
+            for (int leagueRound = 1; leagueRound <= halfLeagueRounds; leagueRound++)
+            {
+                sortedLeagueFixtures.Add(new LeagueFixtureRound(GetReverseAwayFixtureRound(sortedLeagueFixtures[leagueRound - 1].LeagueRoundFixtures), leagueRound + halfLeagueRounds));
             }
 
             return sortedLeagueFixtures;
         }
 
-        private List<LeagueFixture> GetUniqueFixtureRound(List<LeagueFixture> leagueFixtures, int matchesPerWeek)
+        private List<LeagueFixture> GetUniqueHomeFixtureRound(int fixtureRound, int matchesPerWeek)
         {
             List<LeagueFixture> roundFixtures = new List<LeagueFixture>();
 
-            for (int weeklyMatch = 0; weeklyMatch < matchesPerWeek; weeklyMatch++)
+            var clubs = matchesPerWeek * 2;
+
+            for (int weeklyMatchNum = 1; weeklyMatchNum <= matchesPerWeek; weeklyMatchNum++)
             {
-                for (int leagueFixtureCount = leagueFixtures.Count -1; leagueFixtureCount >= 0; leagueFixtureCount--)
+                if (weeklyMatchNum == 1)
                 {
-                    if (!roundFixtures.Any(roundFixture => roundFixture.HomeTeam == leagueFixtures[leagueFixtureCount].HomeTeam || roundFixture.AwayTeam == leagueFixtures[leagueFixtureCount].HomeTeam || roundFixture.HomeTeam == leagueFixtures[leagueFixtureCount].AwayTeam || roundFixture.AwayTeam == leagueFixtures[leagueFixtureCount].AwayTeam))
-                    {
-                        roundFixtures.Add(leagueFixtures[leagueFixtureCount]);
-                        leagueFixtures.RemoveAt(leagueFixtureCount);
-                    }
+                    roundFixtures.Add(new LeagueFixture(LeagueTeams[0], LeagueTeams[(fixtureRound + clubs - weeklyMatchNum - 1) % (clubs - 1) + 1]));
+                }
+                else
+                {
+                    roundFixtures.Add(new LeagueFixture(LeagueTeams[(fixtureRound + weeklyMatchNum - 2) % (clubs - 1) + 1], LeagueTeams[(fixtureRound + clubs - weeklyMatchNum - 1) % (clubs - 1) + 1]));
                 }
             }
 
             return roundFixtures;
+        }
+
+        private List<LeagueFixture> GetReverseAwayFixtureRound(List<LeagueFixture> leagueFixtures)
+        {
+            List<LeagueFixture> roundFixtures = new List<LeagueFixture>();
+
+            foreach (LeagueFixture fixture in leagueFixtures)
+            {
+                var homeTeam = fixture.HomeTeam;
+                var awayTeam = fixture.AwayTeam;
+
+                roundFixtures.Add(new LeagueFixture(awayTeam, homeTeam));
+            }
+
+            return roundFixtures;
+        }
+
+        public void LeagueStandings()
+        {
+            var orderedLeague = LeagueTeams.OrderByDescending(x => x.ClubStatistics.Points).ThenByDescending(x => x.ClubStatistics.GoalDifference).ThenByDescending(x => x.ClubStatistics.GoalsFor);
+
+            Console.WriteLine($"{LeagueName}\n");
+            Console.WriteLine("{0,10}{1,30}{2,10}{3,10}{4,10}{5,10}{6,10}{7,10}{8,10}{9,10}",
+                              "Pos",
+                              "Club",
+                              "MP",
+                              "W",
+                              "D",
+                              "L",
+                              "GF",
+                              "GA",
+                              "GD",
+                              "Pts");
+
+            var position = 1;
+
+            foreach (FootballClub club in orderedLeague)
+            {
+                var clubStats = club.ClubStatistics;
+
+
+                Console.WriteLine("{0,10} {1,30}{2,10}{3,10}{4,10}{5,10}{6,10}{7,10}{8,10}{9,10}",
+                              position,
+                              club.ClubName,
+                              clubStats.MatchesPlayed,
+                              clubStats.MatchesWon,
+                              clubStats.MatchesDrew,
+                              clubStats.MatchesLost,
+                              clubStats.GoalsFor,
+                              clubStats.GoalsAgainst,
+                              clubStats.GoalDifference,
+                              clubStats.Points);
+
+                position++;
+            }
+        }
+
+        private void ShuffleTeamList(List<FootballClub> teamList)
+        {
+            Random rng = new Random();
+
+            int n = teamList.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                FootballClub value = teamList[k];
+                teamList[k] = teamList[n];
+                teamList[n] = value;
+            }
         }
     }
 }

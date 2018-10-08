@@ -13,6 +13,8 @@ namespace FootballChairmanTycoonConsoleApp
             var matchScore = GetMatchScore(homeClubOvr, awayClubOvr);
             fixture.SetFixtureResult(matchScore.HomeGoals, matchScore.AwayGoals);
 
+            SetFixtureResultRelatedStatistics(fixture);
+
             if(matchScore.HomeGoals > matchScore.AwayGoals)
             {
                 return MatchResult.Win;
@@ -47,6 +49,45 @@ namespace FootballChairmanTycoonConsoleApp
             }
 
             return matchScore;
+        }
+
+        private static void SetFixtureResultRelatedStatistics(LeagueFixture fixture)
+        {
+            var homeTeamStats = fixture.HomeTeam.ClubStatistics;
+            var awayTeamStats = fixture.AwayTeam.ClubStatistics;
+
+            homeTeamStats.MatchesPlayed += 1;
+            homeTeamStats.GoalsFor += fixture.HomeGoals;
+            homeTeamStats.GoalsAgainst += fixture.AwayGoals;
+            homeTeamStats.UpdateGoalDifference();
+
+            awayTeamStats.MatchesPlayed += 1;
+            awayTeamStats.GoalsFor += fixture.AwayGoals;
+            awayTeamStats.GoalsAgainst += fixture.HomeGoals;
+            awayTeamStats.UpdateGoalDifference();
+
+            if (fixture.HomeGoals > fixture.AwayGoals)
+            {
+                awayTeamStats.MatchesLost += 1;
+
+                homeTeamStats.MatchesWon += 1;
+                homeTeamStats.Points += 3;
+            }
+            else if (fixture.AwayGoals > fixture.HomeGoals)
+            {
+                homeTeamStats.MatchesLost += 1;
+
+                awayTeamStats.MatchesWon += 1;
+                awayTeamStats.Points += 3;
+            }
+            else
+            {
+                homeTeamStats.MatchesDrew += 1;
+                homeTeamStats.Points += 1;
+
+                awayTeamStats.MatchesDrew += 1;
+                awayTeamStats.Points += 1;
+            }
         }
     }
 }

@@ -11,14 +11,14 @@ namespace FootballChairmanTycoonConsoleApp
             var playerList = JsonReader.ReadJsonPlayersFile();
             var clubList = JsonReader.ReadJsonClubsFile();
 
-            foreach(FootballClub club in clubList)
+            foreach (FootballClub club in clubList)
             {
                 var squadList = playerList.Where(x => x.PlayerCurrentClubID.Equals(club.ClubID)).ToList();
 
                 club.UpdateSquadList(squadList);
             }
 
-            var league = new FootballLeague("England", clubList);
+            var league = new FootballLeague("England", clubList, "Premier League");
 
             Console.WriteLine(league.LeagueFixtures.Count);
 
@@ -35,6 +35,33 @@ namespace FootballChairmanTycoonConsoleApp
                     Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
                 }
             }
+
+            foreach (FootballClub club in clubList)
+            {
+
+                foreach (FootballClub club2 in clubList)
+                {
+                    var count = 0;
+                    foreach (LeagueFixtureRound fixtureRound in league.LeagueFixtures)
+                    {
+                        foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
+                        {
+                            var homeTeam = fixture.HomeTeam.ClubID;
+                            var awayTeam = fixture.AwayTeam.ClubID;
+
+                            if (homeTeam.Equals(club.ClubID) && awayTeam.Equals(club2.ClubID))
+                            {
+                                count++;
+                            }
+
+                            //Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
+                        }
+                    }
+                    //Console.WriteLine($"{club.ClubName} Matches Against {club2.ClubName} - {count}");
+                }
+            }
+
+            league.LeagueStandings();
 
             //Console.WriteLine(playerList[0].PlayerValue);
 
