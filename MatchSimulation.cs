@@ -5,25 +5,23 @@ namespace FootballChairmanTycoonConsoleApp
 {
     public static class MatchSimulation
     {
-        public static MatchResult GetMatchResult(FootballClub homeClub, FootballClub awayClub)
+        public static MatchResult GetMatchResult(LeagueFixture fixture)
         {
-            var homeClubOvr = homeClub.ClubSquad.Select(x => x.PlayerOverallRating).Average();
-            var awayClubOvr = awayClub.ClubSquad.Select(x => x.PlayerOverallRating).Average();
+            var homeClubOvr = fixture.HomeTeam.ClubSquad.Select(x => x.PlayerOverallRating).Average();
+            var awayClubOvr = fixture.AwayTeam.ClubSquad.Select(x => x.PlayerOverallRating).Average();
 
             var matchScore = GetMatchScore(homeClubOvr, awayClubOvr);
+            fixture.SetFixtureResult(matchScore.HomeGoals, matchScore.AwayGoals);
 
             if(matchScore.HomeGoals > matchScore.AwayGoals)
             {
-                Console.WriteLine(homeClub.ClubName + " " + matchScore.HomeGoals + "-" + matchScore.AwayGoals + " " + awayClub.ClubName);
                 return MatchResult.Win;
             }
             else if (matchScore.AwayGoals > matchScore.HomeGoals)
             {
-                Console.WriteLine(homeClub.ClubName + " " + matchScore.HomeGoals + "-" + matchScore.AwayGoals + " " + awayClub.ClubName);
                 return MatchResult.Lose;
             }
 
-            Console.WriteLine(homeClub.ClubName + " " + matchScore.HomeGoals + "-" + matchScore.AwayGoals + " " + awayClub.ClubName);
             return MatchResult.Draw;
         }
 

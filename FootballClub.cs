@@ -12,6 +12,7 @@ namespace FootballChairmanTycoonConsoleApp
         public string ClubStadium { get; private set; }
         public string ClubStadiumCapacity { get; private set; }
         public List<FootballPlayer> ClubSquad { get; private set; } = new List<FootballPlayer>();
+        public ClubStatistics ClubStatistics { get; private set; } = new ClubStatistics();
 
         public FootballClub(int clubID, string clubName, string clubNameAbreviation, List<FootballPlayer> clubSquad)
         {
