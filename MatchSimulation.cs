@@ -15,7 +15,7 @@ namespace FootballChairmanTycoonConsoleApp
 
             SetFixtureResultRelatedStatistics(fixture);
 
-            if(matchScore.HomeGoals > matchScore.AwayGoals)
+            if (matchScore.HomeGoals > matchScore.AwayGoals)
             {
                 return MatchResult.Win;
             }
@@ -32,20 +32,23 @@ namespace FootballChairmanTycoonConsoleApp
             var matchScore = new MatchScore(0, 0);
             var rand = new Random();
 
+            var homeRate = (int)homeOvr / 10;
+            var awayRate = (int)awayOvr / 10;
+
             if (homeOvr > awayOvr)
             {
-                matchScore.HomeGoals += rand.Next(0, 8);
-                matchScore.AwayGoals += rand.Next(0, 5);
+                matchScore.HomeGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, homeRate+2) - rand.Next(0, homeRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.8f) + 0.3f))))), 0, 15);
+                matchScore.AwayGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, awayRate) - rand.Next(0, awayRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.5f) + 0.3f))))), 0, 15);
             }
             else if (awayOvr > homeOvr)
             {
-                matchScore.HomeGoals += rand.Next(0, 4);
-                matchScore.AwayGoals += rand.Next(0, 7);
+                matchScore.HomeGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, homeRate) - rand.Next(0, homeRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.4f) + 0.3f))))), 0, 15);
+                matchScore.AwayGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, awayRate) - rand.Next(0, awayRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.7f) + 0.3f))))), 0, 15);
             }
             else
             {
-                matchScore.HomeGoals += rand.Next(0, 5);
-                matchScore.AwayGoals += rand.Next(0, 5);
+                matchScore.HomeGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, homeRate) - rand.Next(0, homeRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.6f) + 0.3f))))), 0, 15);
+                matchScore.AwayGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, awayRate) - rand.Next(0, awayRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.6f) + 0.3f))))), 0, 15);
             }
 
             return matchScore;
