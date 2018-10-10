@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FootballChairmanTycoonConsoleApp
 {
@@ -11,24 +10,24 @@ namespace FootballChairmanTycoonConsoleApp
         {
             foreach(FootballClub club in clubList)
             {
-                var rand = new Random();
+                var rand = new Random().Next(0,3);
 
-                for(int i =0; i < rand.Next(0,3); i++)
+                for(int i =0; i < rand; i++)
                 {
                     BuyPlayer(club, clubList, playerList);
                 }
             }
-
-            UpdateSquadsAfterTransfers(clubList, playerList);
         }
 
         private static void BuyPlayer(FootballClub club, List<FootballClub> clubList, List<FootballPlayer> playerList)
         {
             // update to 200 if player overall goes to 200
-            var clubRep = (club.Reputation / 100) + 5;
+            var clubRep = (club.Reputation / 100)+5;
             var transferBudget = club.Money * 0.75;
 
-            var targetPlayer = playerList.Where(x => club.ID != x.CurrentClubID && x.OverallRating < clubRep && !x.JustMoved).FirstOrDefault();
+            var rand = new Random().Next(0, 300);
+
+            var targetPlayer = playerList.Where(x => club != x.CurrentClub && x.OverallRating < clubRep && !x.JustMoved).ElementAtOrDefault(rand);
 
             if (targetPlayer == null)
             {
@@ -39,11 +38,15 @@ namespace FootballChairmanTycoonConsoleApp
 
             if(targetPlayerValue < transferBudget)
             {
-                var sellingClub = clubList.Where(x => x.ID == targetPlayer.CurrentClubID).First();
+                var sellingClub = targetPlayer.CurrentClub;
 
-                targetPlayer.UpdateCurrentClub(club.ID);
+                targetPlayer.UpdateCurrentClub(club);
+
                 club.UpdateMoneyAndValue(-targetPlayerValue);
+                club.Squad.Add(targetPlayer);
+
                 sellingClub.UpdateMoneyAndValue(targetPlayerValue);
+                sellingClub.Squad.Remove(targetPlayer);
             }
 
         }
@@ -52,7 +55,7 @@ namespace FootballChairmanTycoonConsoleApp
         {
             foreach (FootballClub club in clubList)
             {
-                var squadList = playerList.Where(x => x.CurrentClubID.Equals(club.ID)).ToList();
+                var squadList = playerList.Where(x => x.CurrentClub.Equals(club.ID)).ToList();
 
                 club.UpdateSquadList(squadList);
             }

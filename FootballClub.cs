@@ -40,11 +40,21 @@ namespace FootballChairmanTycoonConsoleApp
             this.TeamColour = teamColour;
             this.HomeStadiumCapacity = homeStadiumCapacity;
             this.Squad = squad;
+            RegisterSquadToClub(this.Squad);
             this.Reputation = (int)Math.Min(Math.Round(this.HomeStadiumCapacity * 0.11f, 0), 10000);
             this.Money = this.HomeStadiumCapacity * 7000;
             this.Value = (this.Reputation * 75000) + this.Money;
             this.Morale = 10;
         }
+
+        private void RegisterSquadToClub(List<FootballPlayer> squad)
+        {
+            foreach(FootballPlayer player in squad)
+            {
+                player.SetCurrentClub(this);
+            }
+        }
+
 
         public void UpdateSquadList(List<FootballPlayer> squad)
         {

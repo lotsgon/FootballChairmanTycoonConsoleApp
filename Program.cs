@@ -1,5 +1,6 @@
 ﻿using FootballChairmanTycoonConsoleApp.JsonData;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 
@@ -9,14 +10,12 @@ namespace FootballChairmanTycoonConsoleApp
     {
         static void Main(string[] args)
         {
-            var playerList = JsonReader.ReadJsonPlayersFile();
+            List<FootballPlayer> playerList = new List<FootballPlayer>();
             var clubList = JsonReader.ReadJsonClubsFile();
 
             foreach (FootballClub club in clubList)
             {
-                var squadList = playerList.Where(x => x.CurrentClubID.Equals(club.ID)).ToList();
-
-                club.UpdateSquadList(squadList);
+                playerList.AddRange(club.Squad);
             }
 
             var league = new FootballLeague("England", clubList, "Premier League");
@@ -29,8 +28,8 @@ namespace FootballChairmanTycoonConsoleApp
             {
                 Console.WriteLine("{0,30}{1,30}{2,10}{3,10}{4,10}{5,10}{6,10}",
                               player.ShortName,
-                              player.CurrentClubID,
-                              player.PreviousClubID,
+                              player.CurrentClub.Name,
+                              player.PreviousClub.Name,
                               player.Position,
                               player.Value,
                               player.OverallRating,

@@ -13,7 +13,7 @@ namespace FootballChairmanTycoonConsoleApp
 
         public static List<FootballClub> ReadJsonClubsFile()
         {
-            return JsonConvert.DeserializeObject<List<FootballClub>>(File.ReadAllText(@"..\\..\..\JsonData\EnglishFakeClubs1.json"));
+            return JsonConvert.DeserializeObject<List<FootballClub>>(File.ReadAllText(@"..\\..\..\JsonData\EnglishFakeClubsWithSquads1.json"));
         }
     }
 } 
