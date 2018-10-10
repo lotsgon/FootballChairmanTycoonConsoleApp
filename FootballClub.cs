@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 
 namespace FootballChairmanTycoonConsoleApp
@@ -18,6 +19,8 @@ namespace FootballChairmanTycoonConsoleApp
         public Vector3 TeamColour { get; private set; }
         public int HomeStadiumCapacity { get; private set; }
         public int Reputation { get; private set; }
+        public int Money { get; private set; }
+        public int Value { get; private set; }
         public int Morale { get; private set; }
         public List<FootballPlayer> Squad { get; private set; } = new List<FootballPlayer>();
         public ClubStatistics Statistics { get; private set; } = new ClubStatistics();
@@ -37,13 +40,44 @@ namespace FootballChairmanTycoonConsoleApp
             this.TeamColour = teamColour;
             this.HomeStadiumCapacity = homeStadiumCapacity;
             this.Squad = squad;
-            this.Reputation = 0;
+            this.Reputation = (int)Math.Min(Math.Round(this.HomeStadiumCapacity * 0.11f, 0), 10000);
+            this.Money = this.HomeStadiumCapacity * 7000;
+            this.Value = (this.Reputation * 75000) + this.Money;
             this.Morale = 10;
         }
 
         public void UpdateSquadList(List<FootballPlayer> squad)
         {
             this.Squad = squad;
+        }
+
+        public void UpdateReputation(int value, bool increase)
+        {
+            var updatedValue = (int)Math.Round(value * 0.11f, 0);
+            if (increase)
+            {
+                this.Reputation += updatedValue;
+            }
+            else
+            {
+                this.Reputation -= updatedValue;
+            }
+        }
+
+        public void UpdateMoneyAndValue(int amount)
+        {
+            this.Value += amount;
+            this.Money += amount;
+        }
+
+        public void UpdateValue(int amount)
+        {
+            this.Value += amount;
+        }
+
+        public void UpdateMoney(int amount)
+        {
+            this.Money += amount;
         }
 
     }

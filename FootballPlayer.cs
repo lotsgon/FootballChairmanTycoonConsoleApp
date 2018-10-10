@@ -14,9 +14,11 @@
         public int OverallRating { get; private set; }
         public int PotentialRating { get; private set; }
         public int CurrentClubID { get; private set; }
+        public int PreviousClubID { get; private set; }
         public int Value { get; private set; }
         public int Wage { get; private set; }
         public int Reputation { get; private set; }
+        public bool JustMoved { get; private set; }
 
         public FootballPlayer(int playerID, string playerFirstName, string playerSurname, int playerAge, PlayerPosition playerPosition, int playerOverallRating, int playerPotentialRating, int playerCurrentClubID, int playerValue, int playerWage)
         {
@@ -32,7 +34,15 @@
             this.CurrentClubID = playerCurrentClubID;
             this.Value = playerValue;
             this.Wage = playerWage;
+            this.Reputation = playerOverallRating;
+            this.JustMoved = false;
         }
 
+        public void UpdateCurrentClub(int newClubId)
+        {
+            this.PreviousClubID = this.CurrentClubID;
+            this.CurrentClubID = newClubId;
+            this.JustMoved = true;
+        }
     }
 }

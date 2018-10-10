@@ -21,48 +21,70 @@ namespace FootballChairmanTycoonConsoleApp
 
             var league = new FootballLeague("England", clubList, "Premier League");
 
-            Console.WriteLine(league.Fixtures.Count);
+            TransferSimulation.SimulateTransferDay(clubList, playerList);
 
-            foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
+            var playersMoved = playerList.Where(x => x.JustMoved);
+
+            foreach (FootballPlayer player in playersMoved)
             {
-                Console.WriteLine($"\nMatch Round {fixtureRound.LeagueRound}\n");
-
-                foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
-                {
-                    var homeTeam = fixture.HomeTeam.Name;
-                    var awayTeam = fixture.AwayTeam.Name;
-                    var result = MatchSimulation.GetMatchResult(fixture);
-
-                    Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
-                }
+                Console.WriteLine("{0,30}{1,30}{2,10}{3,10}{4,10}{5,10}{6,10}",
+                              player.ShortName,
+                              player.CurrentClubID,
+                              player.PreviousClubID,
+                              player.Position,
+                              player.Value,
+                              player.OverallRating,
+                              player.JustMoved);
             }
 
-            foreach (FootballClub club in clubList)
-            {
+            //Console.WriteLine(league.Fixtures.Count);
 
-                foreach (FootballClub club2 in clubList)
-                {
-                    var count = 0;
-                    foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
-                    {
-                        foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
-                        {
-                            var homeTeam = fixture.HomeTeam.ID;
-                            var awayTeam = fixture.AwayTeam.ID;
+            ////////////////////////////////////////////////////////////////////////
+            // SEASON SIMULATION
+            ////////////////////////////////////////////////////////////////////////
+            //foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
+            //{
+            //    Console.WriteLine($"\nMatch Round {fixtureRound.LeagueRound}\n");
 
-                            if (homeTeam.Equals(club.ID) && awayTeam.Equals(club2.ID))
-                            {
-                                count++;
-                            }
+            //    foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
+            //    {
+            //        var homeTeam = fixture.HomeTeam.Name;
+            //        var awayTeam = fixture.AwayTeam.Name;
+            //        var result = MatchSimulation.GetMatchResult(fixture);
 
-                            //Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
-                        }
-                    }
-                    //Console.WriteLine($"{club.ClubName} Matches Against {club2.ClubName} - {count}");
-                }
-            }
+            //        Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
+            //    }
+            //}
 
-            league.LeagueStandings();
+            ////////////////////////////////////////////////////////////////////////
+            // DEBUG FIXTURE CHECKER
+            ////////////////////////////////////////////////////////////////////////
+            //foreach (FootballClub club in clubList)
+            //{
+
+            //    foreach (FootballClub club2 in clubList)
+            //    {
+            //        var count = 0;
+            //        foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
+            //        {
+            //            foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
+            //            {
+            //                var homeTeam = fixture.HomeTeam.ID;
+            //                var awayTeam = fixture.AwayTeam.ID;
+
+            //                if (homeTeam.Equals(club.ID) && awayTeam.Equals(club2.ID))
+            //                {
+            //                    count++;
+            //                }
+
+            //                //Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
+            //            }
+            //        }
+            //        //Console.WriteLine($"{club.ClubName} Matches Against {club2.ClubName} - {count}");
+            //    }
+            //}
+
+            //league.LeagueStandings();
 
             //Console.WriteLine(playerList[0].PlayerValue);
 
