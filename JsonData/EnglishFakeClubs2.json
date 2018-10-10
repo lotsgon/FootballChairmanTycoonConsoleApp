@@ -1,0 +1,362 @@
+[
+    {
+        "ID": 0,
+        "City": "Hyde",
+        "Name": "Hyde Town",
+        "LongName": "Hyde Town Football Club",
+        "SixLetterName": "Hyde Town",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1870,
+        "Status": "Professional",
+        "HomeStadium": "Lefferts Place Stadium",
+        "TeamColour": {
+            "x": 153,
+            "y": 142,
+            "z": 41
+        },
+        "HomeStadiumCapacity": 43771
+    },
+    {
+        "ID": 1,
+        "City": "Pateley Bridge",
+        "Name": "Pateley Bridge Northfleet",
+        "LongName": "Pateley Bridge Northfleet Football Club",
+        "SixLetterName": "Pateley Bridge Northfleet",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1952,
+        "Status": "Professional",
+        "HomeStadium": "Zolavo Stadium",
+        "TeamColour": {
+            "x": 177,
+            "y": 199,
+            "z": 32
+        },
+        "HomeStadiumCapacity": 52847
+    },
+    {
+        "ID": 2,
+        "City": "Cockermouth",
+        "Name": "Cockermouth Albion",
+        "LongName": "Cockermouth Albion Football Club",
+        "SixLetterName": "Cockermouth Albion",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1911,
+        "Status": "Professional",
+        "HomeStadium": "Flotonic Way",
+        "TeamColour": {
+            "x": 177,
+            "y": 204,
+            "z": 120
+        },
+        "HomeStadiumCapacity": 62676
+    },
+    {
+        "ID": 3,
+        "City": "Hessle",
+        "Name": "Hessle Orient",
+        "LongName": "Hessle Orient Football Club",
+        "SixLetterName": "Hessle Orient",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2010,
+        "Status": "Professional",
+        "HomeStadium": "Corepan Arena",
+        "TeamColour": {
+            "x": 101,
+            "y": 104,
+            "z": 146
+        },
+        "HomeStadiumCapacity": 55257
+    },
+    {
+        "ID": 4,
+        "City": "Barnard Castle",
+        "Name": "Barnard Castle Diamonds",
+        "LongName": "Barnard Castle Diamonds Football Club",
+        "SixLetterName": "Barnard Castle Diamonds",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1952,
+        "Status": "Professional",
+        "HomeStadium": "Lamont Court Arena",
+        "TeamColour": {
+            "x": 56,
+            "y": 182,
+            "z": 64
+        },
+        "HomeStadiumCapacity": 40707
+    },
+    {
+        "ID": 5,
+        "City": "Ormskirk",
+        "Name": "Ormskirk North End",
+        "LongName": "Ormskirk North End Football Club",
+        "SixLetterName": "Ormskirk North End",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1890,
+        "Status": "Professional",
+        "HomeStadium": "Jamnation Stadium",
+        "TeamColour": {
+            "x": 185,
+            "y": 189,
+            "z": 178
+        },
+        "HomeStadiumCapacity": 66439
+    },
+    {
+        "ID": 6,
+        "City": "Wimbledon",
+        "Name": "Wimbledon Wanderers",
+        "LongName": "Wimbledon Wanderers Football Club",
+        "SixLetterName": "Wimbledon Wanderers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1932,
+        "Status": "Professional",
+        "HomeStadium": "McClancy Place Arena",
+        "TeamColour": {
+            "x": 63,
+            "y": 109,
+            "z": 31
+        },
+        "HomeStadiumCapacity": 65887
+    },
+    {
+        "ID": 7,
+        "City": "Southminster",
+        "Name": "Southminster Villa",
+        "LongName": "Southminster Villa Football Club",
+        "SixLetterName": "Southminster Villa",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1934,
+        "Status": "Professional",
+        "HomeStadium": "Midwood Street Park",
+        "TeamColour": {
+            "x": 217,
+            "y": 82,
+            "z": 229
+        },
+        "HomeStadiumCapacity": 40360
+    },
+    {
+        "ID": 8,
+        "City": "Kings Lynn",
+        "Name": "Kings Lynn Diamonds",
+        "LongName": "Kings Lynn Diamonds Football Club",
+        "SixLetterName": "Kings Lynn Diamonds",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1877,
+        "Status": "Professional",
+        "HomeStadium": "Amersfort Place Way",
+        "TeamColour": {
+            "x": 240,
+            "y": 198,
+            "z": 168
+        },
+        "HomeStadiumCapacity": 39646
+    },
+    {
+        "ID": 9,
+        "City": "Baldock",
+        "Name": "Baldock Argyle",
+        "LongName": "Baldock Argyle Football Club",
+        "SixLetterName": "Baldock Argyle",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1891,
+        "Status": "Professional",
+        "HomeStadium": "Baldock Argyle Park",
+        "TeamColour": {
+            "x": 85,
+            "y": 205,
+            "z": 238
+        },
+        "HomeStadiumCapacity": 50316
+    },
+    {
+        "ID": 10,
+        "City": "Westerham",
+        "Name": "Westerham Argyle",
+        "LongName": "Westerham Argyle Football Club",
+        "SixLetterName": "Westerham Argyle",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1906,
+        "Status": "Professional",
+        "HomeStadium": "Conover Street Park",
+        "TeamColour": {
+            "x": 182,
+            "y": 40,
+            "z": 15
+        },
+        "HomeStadiumCapacity": 62983
+    },
+    {
+        "ID": 11,
+        "City": "Hastings",
+        "Name": "Hastings City",
+        "LongName": "Hastings City Football Club",
+        "SixLetterName": "Hastings City",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1872,
+        "Status": "Professional",
+        "HomeStadium": "Hastings City Stadium",
+        "TeamColour": {
+            "x": 244,
+            "y": 159,
+            "z": 37
+        },
+        "HomeStadiumCapacity": 17163
+    },
+    {
+        "ID": 12,
+        "City": "Okehampton",
+        "Name": "Okehampton Harriers",
+        "LongName": "Okehampton Harriers Football Club",
+        "SixLetterName": "Okehampton Harriers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1878,
+        "Status": "Professional",
+        "HomeStadium": "Interfind Lane",
+        "TeamColour": {
+            "x": 253,
+            "y": 168,
+            "z": 9
+        },
+        "HomeStadiumCapacity": 11143
+    },
+    {
+        "ID": 13,
+        "City": "Frodsham",
+        "Name": "Frodsham Athletic",
+        "LongName": "Frodsham Athletic Football Club",
+        "SixLetterName": "Frodsham Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1950,
+        "Status": "Professional",
+        "HomeStadium": "Frodsham Athletic Stadium",
+        "TeamColour": {
+            "x": 76,
+            "y": 52,
+            "z": 125
+        },
+        "HomeStadiumCapacity": 56996
+    },
+    {
+        "ID": 14,
+        "City": "Ormskirk",
+        "Name": "Ormskirk Athletic",
+        "LongName": "Ormskirk Athletic Football Club",
+        "SixLetterName": "Ormskirk Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1958,
+        "Status": "Professional",
+        "HomeStadium": "Clifton Place Park",
+        "TeamColour": {
+            "x": 192,
+            "y": 76,
+            "z": 36
+        },
+        "HomeStadiumCapacity": 19954
+    },
+    {
+        "ID": 15,
+        "City": "Newcastle under Lyme",
+        "Name": "Newcastle under Lyme Argyle",
+        "LongName": "Newcastle under Lyme Argyle Football Club",
+        "SixLetterName": "Newcastle under Lyme Argyle",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1887,
+        "Status": "Professional",
+        "HomeStadium": "Newcastle under Lyme Argyle Way",
+        "TeamColour": {
+            "x": 212,
+            "y": 222,
+            "z": 247
+        },
+        "HomeStadiumCapacity": 39099
+    },
+    {
+        "ID": 16,
+        "City": "Scarborough",
+        "Name": "Scarborough Town",
+        "LongName": "Scarborough Town Football Club",
+        "SixLetterName": "Scarborough Town",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1880,
+        "Status": "Professional",
+        "HomeStadium": "Scarborough Town Park",
+        "TeamColour": {
+            "x": 41,
+            "y": 88,
+            "z": 149
+        },
+        "HomeStadiumCapacity": 38505
+    },
+    {
+        "ID": 17,
+        "City": "Chorleywood",
+        "Name": "Chorleywood Villa",
+        "LongName": "Chorleywood Villa Football Club",
+        "SixLetterName": "Chorleywood Villa",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2005,
+        "Status": "Professional",
+        "HomeStadium": "Viasia Road",
+        "TeamColour": {
+            "x": 139,
+            "y": 35,
+            "z": 204
+        },
+        "HomeStadiumCapacity": 56480
+    },
+    {
+        "ID": 18,
+        "City": "Maltby",
+        "Name": "Maltby United",
+        "LongName": "Maltby United Football Club",
+        "SixLetterName": "Maltby United",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1940,
+        "Status": "Professional",
+        "HomeStadium": "Barkarama Stadium",
+        "TeamColour": {
+            "x": 222,
+            "y": 16,
+            "z": 223
+        },
+        "HomeStadiumCapacity": 46546
+    },
+    {
+        "ID": 19,
+        "City": "Dereham",
+        "Name": "Dereham Victoria",
+        "LongName": "Dereham Victoria Football Club",
+        "SixLetterName": "Dereham Victoria",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1889,
+        "Status": "Professional",
+        "HomeStadium": "Dereham Victoria Lane",
+        "TeamColour": {
+            "x": 168,
+            "y": 234,
+            "z": 82
+        },
+        "HomeStadiumCapacity": 45729
+    }
+]

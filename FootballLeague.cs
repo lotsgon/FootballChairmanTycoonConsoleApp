@@ -6,17 +6,17 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
 {
     public class FootballLeague
     {
-        public string LeagueNation { get; private set; }
-        public string LeagueName { get; private set; }
-        public List<FootballClub> LeagueTeams { get; private set; }
-        public List<LeagueFixtureRound> LeagueFixtures { get; set; }
+        public string Nation { get; private set; }
+        public string Name { get; private set; }
+        public List<FootballClub> Teams { get; private set; }
+        public List<LeagueFixtureRound> Fixtures { get; set; }
 
         public FootballLeague(string leagueNation, List<FootballClub> leagueTeams, string leagueName)
         {
-            this.LeagueName = leagueName;
-            this.LeagueNation = leagueNation;
-            this.LeagueTeams = leagueTeams;
-            this.LeagueFixtures = this.GenerateLeagueFixtures(LeagueTeams);
+            this.Name = leagueName;
+            this.Nation = leagueNation;
+            this.Teams = leagueTeams;
+            this.Fixtures = this.GenerateLeagueFixtures(Teams);
         }
 
         private List<LeagueFixtureRound> GenerateLeagueFixtures(List<FootballClub> leagueTeams)
@@ -51,11 +51,11 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
             {
                 if (weeklyMatchNum == 1)
                 {
-                    roundFixtures.Add(new LeagueFixture(LeagueTeams[0], LeagueTeams[(fixtureRound + clubs - weeklyMatchNum - 1) % (clubs - 1) + 1]));
+                    roundFixtures.Add(new LeagueFixture(Teams[0], Teams[(fixtureRound + clubs - weeklyMatchNum - 1) % (clubs - 1) + 1]));
                 }
                 else
                 {
-                    roundFixtures.Add(new LeagueFixture(LeagueTeams[(fixtureRound + weeklyMatchNum - 2) % (clubs - 1) + 1], LeagueTeams[(fixtureRound + clubs - weeklyMatchNum - 1) % (clubs - 1) + 1]));
+                    roundFixtures.Add(new LeagueFixture(Teams[(fixtureRound + weeklyMatchNum - 2) % (clubs - 1) + 1], Teams[(fixtureRound + clubs - weeklyMatchNum - 1) % (clubs - 1) + 1]));
                 }
             }
 
@@ -79,9 +79,9 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
 
         public void LeagueStandings()
         {
-            var orderedLeague = LeagueTeams.OrderByDescending(x => x.ClubStatistics.Points).ThenByDescending(x => x.ClubStatistics.GoalDifference).ThenByDescending(x => x.ClubStatistics.GoalsFor);
+            var orderedLeague = Teams.OrderByDescending(x => x.Statistics.Points).ThenByDescending(x => x.Statistics.GoalDifference).ThenByDescending(x => x.Statistics.GoalsFor);
 
-            Console.WriteLine($"{LeagueName}\n");
+            Console.WriteLine($"{Name}\n");
             Console.WriteLine("{0,10}{1,30}{2,10}{3,10}{4,10}{5,10}{6,10}{7,10}{8,10}{9,10}",
                               "Pos",
                               "Club",
@@ -98,12 +98,13 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
 
             foreach (FootballClub club in orderedLeague)
             {
-                var clubStats = club.ClubStatistics;
+                var clubStats = club.Statistics;
 
+                Win32.SetConsoleTextAttribute(Win32.GetStdHandle(-11), (short)(club.TeamColour.X + club.TeamColour.Y + club.TeamColour.Z));
 
                 Console.WriteLine("{0,10} {1,30}{2,10}{3,10}{4,10}{5,10}{6,10}{7,10}{8,10}{9,10}",
                               position,
-                              club.ClubName,
+                              club.Name,
                               clubStats.MatchesPlayed,
                               clubStats.MatchesWon,
                               clubStats.MatchesDrew,
@@ -112,7 +113,7 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
                               clubStats.GoalsAgainst,
                               clubStats.GoalDifference,
                               clubStats.Points);
-
+                Win32.SetConsoleTextAttribute(Win32.GetStdHandle(-11), (short)0);
                 position++;
             }
         }

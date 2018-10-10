@@ -7,8 +7,8 @@ namespace FootballChairmanTycoonConsoleApp
     {
         public static MatchResult GetMatchResult(LeagueFixture fixture)
         {
-            var homeClubOvr = fixture.HomeTeam.ClubSquad.Select(x => x.PlayerOverallRating).Average();
-            var awayClubOvr = fixture.AwayTeam.ClubSquad.Select(x => x.PlayerOverallRating).Average();
+            var homeClubOvr = fixture.HomeTeam.Squad.Select(x => x.OverallRating).Average();
+            var awayClubOvr = fixture.AwayTeam.Squad.Select(x => x.OverallRating).Average();
 
             var matchScore = GetMatchScore(homeClubOvr, awayClubOvr);
             fixture.SetFixtureResult(matchScore.HomeGoals, matchScore.AwayGoals);
@@ -56,8 +56,8 @@ namespace FootballChairmanTycoonConsoleApp
 
         private static void SetFixtureResultRelatedStatistics(LeagueFixture fixture)
         {
-            var homeTeamStats = fixture.HomeTeam.ClubStatistics;
-            var awayTeamStats = fixture.AwayTeam.ClubStatistics;
+            var homeTeamStats = fixture.HomeTeam.Statistics;
+            var awayTeamStats = fixture.AwayTeam.Statistics;
 
             homeTeamStats.MatchesPlayed += 1;
             homeTeamStats.GoalsFor += fixture.HomeGoals;

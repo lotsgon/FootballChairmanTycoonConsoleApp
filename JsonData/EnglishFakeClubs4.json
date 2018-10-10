@@ -1,0 +1,362 @@
+[
+    {
+        "ID": 0,
+        "City": "Bude",
+        "Name": "Bude Hotspur",
+        "LongName": "Bude Hotspur Football Club",
+        "SixLetterName": "Bude Hotspur",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1953,
+        "Status": "Professional",
+        "HomeStadium": "Konnect Lane",
+        "TeamColour": {
+            "x": 127,
+            "y": 25,
+            "z": 110
+        },
+        "HomeStadiumCapacity": 24577
+    },
+    {
+        "ID": 1,
+        "City": "Cirencester",
+        "Name": "Cirencester Borough",
+        "LongName": "Cirencester Borough Football Club",
+        "SixLetterName": "Cirencester Borough",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1888,
+        "Status": "Professional",
+        "HomeStadium": "Manhattan Court Arena",
+        "TeamColour": {
+            "x": 58,
+            "y": 176,
+            "z": 250
+        },
+        "HomeStadiumCapacity": 33865
+    },
+    {
+        "ID": 2,
+        "City": "Highworth",
+        "Name": "Highworth Orient",
+        "LongName": "Highworth Orient Football Club",
+        "SixLetterName": "Highworth Orient",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1928,
+        "Status": "Professional",
+        "HomeStadium": "Emtrac Stadium",
+        "TeamColour": {
+            "x": 255,
+            "y": 232,
+            "z": 48
+        },
+        "HomeStadiumCapacity": 36085
+    },
+    {
+        "ID": 3,
+        "City": "Blackrod",
+        "Name": "Blackrod Northfleet",
+        "LongName": "Blackrod Northfleet Football Club",
+        "SixLetterName": "Blackrod Northfleet",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1871,
+        "Status": "Professional",
+        "HomeStadium": "Hampton Place Lane",
+        "TeamColour": {
+            "x": 73,
+            "y": 62,
+            "z": 84
+        },
+        "HomeStadiumCapacity": 26500
+    },
+    {
+        "ID": 4,
+        "City": "West Thurrock",
+        "Name": "West Thurrock Redbridge",
+        "LongName": "West Thurrock Redbridge Football Club",
+        "SixLetterName": "West Thurrock Redbridge",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2007,
+        "Status": "Professional",
+        "HomeStadium": "Aquacine Lane",
+        "TeamColour": {
+            "x": 58,
+            "y": 92,
+            "z": 195
+        },
+        "HomeStadiumCapacity": 26864
+    },
+    {
+        "ID": 5,
+        "City": "Thornton Cleveleys",
+        "Name": "Thornton Cleveleys Athletic",
+        "LongName": "Thornton Cleveleys Athletic Football Club",
+        "SixLetterName": "Thornton Cleveleys Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1895,
+        "Status": "Professional",
+        "HomeStadium": "Puria Arena",
+        "TeamColour": {
+            "x": 91,
+            "y": 33,
+            "z": 66
+        },
+        "HomeStadiumCapacity": 45778
+    },
+    {
+        "ID": 6,
+        "City": "Polegate",
+        "Name": "Polegate Athletic",
+        "LongName": "Polegate Athletic Football Club",
+        "SixLetterName": "Polegate Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1902,
+        "Status": "Professional",
+        "HomeStadium": "Thomas Street Stadium",
+        "TeamColour": {
+            "x": 125,
+            "y": 119,
+            "z": 26
+        },
+        "HomeStadiumCapacity": 28566
+    },
+    {
+        "ID": 7,
+        "City": "Seaham",
+        "Name": "Seaham Borough",
+        "LongName": "Seaham Borough Football Club",
+        "SixLetterName": "Seaham Borough",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1899,
+        "Status": "Professional",
+        "HomeStadium": "Seaham Borough Way",
+        "TeamColour": {
+            "x": 187,
+            "y": 161,
+            "z": 111
+        },
+        "HomeStadiumCapacity": 54716
+    },
+    {
+        "ID": 8,
+        "City": "Fulbourn",
+        "Name": "Fulbourn Redbridge",
+        "LongName": "Fulbourn Redbridge Football Club",
+        "SixLetterName": "Fulbourn Redbridge",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1961,
+        "Status": "Professional",
+        "HomeStadium": "Buzzopia Lane",
+        "TeamColour": {
+            "x": 146,
+            "y": 90,
+            "z": 42
+        },
+        "HomeStadiumCapacity": 47889
+    },
+    {
+        "ID": 9,
+        "City": "Whitehill",
+        "Name": "Whitehill Borough",
+        "LongName": "Whitehill Borough Football Club",
+        "SixLetterName": "Whitehill Borough",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1919,
+        "Status": "Professional",
+        "HomeStadium": "Montana Place Arena",
+        "TeamColour": {
+            "x": 155,
+            "y": 33,
+            "z": 163
+        },
+        "HomeStadiumCapacity": 16054
+    },
+    {
+        "ID": 10,
+        "City": "Market Weighton",
+        "Name": "Market Weighton Diamonds",
+        "LongName": "Market Weighton Diamonds Football Club",
+        "SixLetterName": "Market Weighton Diamonds",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1921,
+        "Status": "Professional",
+        "HomeStadium": "Market Weighton Diamonds Arena",
+        "TeamColour": {
+            "x": 229,
+            "y": 24,
+            "z": 204
+        },
+        "HomeStadiumCapacity": 62147
+    },
+    {
+        "ID": 11,
+        "City": "Ferndown",
+        "Name": "Ferndown Forest",
+        "LongName": "Ferndown Forest Football Club",
+        "SixLetterName": "Ferndown Forest",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1904,
+        "Status": "Professional",
+        "HomeStadium": "Johnson Street Arena",
+        "TeamColour": {
+            "x": 147,
+            "y": 138,
+            "z": 182
+        },
+        "HomeStadiumCapacity": 43516
+    },
+    {
+        "ID": 12,
+        "City": "West Tilbury",
+        "Name": "West Tilbury Stanley",
+        "LongName": "West Tilbury Stanley Football Club",
+        "SixLetterName": "West Tilbury Stanley",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1933,
+        "Status": "Professional",
+        "HomeStadium": "Hinckley Place Way",
+        "TeamColour": {
+            "x": 77,
+            "y": 224,
+            "z": 104
+        },
+        "HomeStadiumCapacity": 49148
+    },
+    {
+        "ID": 13,
+        "City": "Shallcross",
+        "Name": "Shallcross Athletic",
+        "LongName": "Shallcross Athletic Football Club",
+        "SixLetterName": "Shallcross Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2010,
+        "Status": "Professional",
+        "HomeStadium": "Shallcross Athletic Park",
+        "TeamColour": {
+            "x": 164,
+            "y": 151,
+            "z": 44
+        },
+        "HomeStadiumCapacity": 50815
+    },
+    {
+        "ID": 14,
+        "City": "Woodbridge",
+        "Name": "Woodbridge Wednesday",
+        "LongName": "Woodbridge Wednesday Football Club",
+        "SixLetterName": "Woodbridge Wednesday",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1931,
+        "Status": "Professional",
+        "HomeStadium": "Lunchpod Park",
+        "TeamColour": {
+            "x": 81,
+            "y": 110,
+            "z": 221
+        },
+        "HomeStadiumCapacity": 57546
+    },
+    {
+        "ID": 15,
+        "City": "Hertford",
+        "Name": "Hertford Harriers",
+        "LongName": "Hertford Harriers Football Club",
+        "SixLetterName": "Hertford Harriers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1995,
+        "Status": "Professional",
+        "HomeStadium": "Hertford Harriers Arena",
+        "TeamColour": {
+            "x": 91,
+            "y": 22,
+            "z": 0
+        },
+        "HomeStadiumCapacity": 35838
+    },
+    {
+        "ID": 16,
+        "City": "Highampton",
+        "Name": "Highampton Borough",
+        "LongName": "Highampton Borough Football Club",
+        "SixLetterName": "Highampton Borough",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1894,
+        "Status": "Professional",
+        "HomeStadium": "Amber Street Way",
+        "TeamColour": {
+            "x": 187,
+            "y": 234,
+            "z": 45
+        },
+        "HomeStadiumCapacity": 65281
+    },
+    {
+        "ID": 17,
+        "City": "Moxley",
+        "Name": "Moxley Town",
+        "LongName": "Moxley Town Football Club",
+        "SixLetterName": "Moxley Town",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1947,
+        "Status": "Professional",
+        "HomeStadium": "Halap Park",
+        "TeamColour": {
+            "x": 225,
+            "y": 0,
+            "z": 38
+        },
+        "HomeStadiumCapacity": 11949
+    },
+    {
+        "ID": 18,
+        "City": "Smethwick",
+        "Name": "Smethwick Borough",
+        "LongName": "Smethwick Borough Football Club",
+        "SixLetterName": "Smethwick Borough",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1959,
+        "Status": "Professional",
+        "HomeStadium": "Smethwick Borough Road",
+        "TeamColour": {
+            "x": 24,
+            "y": 15,
+            "z": 153
+        },
+        "HomeStadiumCapacity": 14125
+    },
+    {
+        "ID": 19,
+        "City": "Silloth",
+        "Name": "Silloth Rangers",
+        "LongName": "Silloth Rangers Football Club",
+        "SixLetterName": "Silloth Rangers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2006,
+        "Status": "Professional",
+        "HomeStadium": "Silloth Rangers Park",
+        "TeamColour": {
+            "x": 209,
+            "y": 174,
+            "z": 245
+        },
+        "HomeStadiumCapacity": 26409
+    }
+]

@@ -1,6 +1,7 @@
 ﻿using FootballChairmanTycoonConsoleApp.JsonData;
 using System;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace FootballChairmanTycoonConsoleApp
 {
@@ -13,23 +14,23 @@ namespace FootballChairmanTycoonConsoleApp
 
             foreach (FootballClub club in clubList)
             {
-                var squadList = playerList.Where(x => x.PlayerCurrentClubID.Equals(club.ClubID)).ToList();
+                var squadList = playerList.Where(x => x.CurrentClubID.Equals(club.ID)).ToList();
 
                 club.UpdateSquadList(squadList);
             }
 
             var league = new FootballLeague("England", clubList, "Premier League");
 
-            Console.WriteLine(league.LeagueFixtures.Count);
+            Console.WriteLine(league.Fixtures.Count);
 
-            foreach (LeagueFixtureRound fixtureRound in league.LeagueFixtures)
+            foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
             {
                 Console.WriteLine($"\nMatch Round {fixtureRound.LeagueRound}\n");
 
                 foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
                 {
-                    var homeTeam = fixture.HomeTeam.ClubName;
-                    var awayTeam = fixture.AwayTeam.ClubName;
+                    var homeTeam = fixture.HomeTeam.Name;
+                    var awayTeam = fixture.AwayTeam.Name;
                     var result = MatchSimulation.GetMatchResult(fixture);
 
                     Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
@@ -42,14 +43,14 @@ namespace FootballChairmanTycoonConsoleApp
                 foreach (FootballClub club2 in clubList)
                 {
                     var count = 0;
-                    foreach (LeagueFixtureRound fixtureRound in league.LeagueFixtures)
+                    foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
                     {
                         foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
                         {
-                            var homeTeam = fixture.HomeTeam.ClubID;
-                            var awayTeam = fixture.AwayTeam.ClubID;
+                            var homeTeam = fixture.HomeTeam.ID;
+                            var awayTeam = fixture.AwayTeam.ID;
 
-                            if (homeTeam.Equals(club.ClubID) && awayTeam.Equals(club2.ClubID))
+                            if (homeTeam.Equals(club.ID) && awayTeam.Equals(club2.ID))
                             {
                                 count++;
                             }
@@ -81,5 +82,14 @@ namespace FootballChairmanTycoonConsoleApp
 
             Console.ReadLine();
         }
+    }
+
+    public static class Win32
+    {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool SetConsoleTextAttribute(IntPtr hConsoleOutput, short attributes);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern IntPtr GetStdHandle(int nStdHandle);
     }
 }

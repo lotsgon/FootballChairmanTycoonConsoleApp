@@ -1,30 +1,49 @@
 ﻿using System.Collections.Generic;
+using System.Numerics;
 
 namespace FootballChairmanTycoonConsoleApp
 {
     public class FootballClub
     {
-        public int ClubID { get; private set; }
-        public string ClubName { get; private set; }
-        public string ClubNameAbreviation { get; private set; }
-        public string LeagueId { get; private set; }
-        public string ClubLocation { get; private set; }
-        public string ClubStadium { get; private set; }
-        public string ClubStadiumCapacity { get; private set; }
-        public List<FootballPlayer> ClubSquad { get; private set; } = new List<FootballPlayer>();
-        public ClubStatistics ClubStatistics { get; private set; } = new ClubStatistics();
+        public int ID { get; private set; }
+        public string Name { get; private set; }
+        public string LongName { get; private set; }
+        public string SixLetterName { get; private set; }
+        public int LeagueID { get; private set; }
+        public string Nation { get; private set; }
+        public string City { get; private set; }
+        public int YearFounded { get; private set; }
+        public string Status { get; private set; }
+        public string HomeStadium { get; private set; }
+        public Vector3 TeamColour { get; private set; }
+        public int HomeStadiumCapacity { get; private set; }
+        public int Reputation { get; private set; }
+        public int Morale { get; private set; }
+        public List<FootballPlayer> Squad { get; private set; } = new List<FootballPlayer>();
+        public ClubStatistics Statistics { get; private set; } = new ClubStatistics();
 
-        public FootballClub(int clubID, string clubName, string clubNameAbreviation, List<FootballPlayer> clubSquad)
+        public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad)
         {
-            this.ClubID = clubID;
-            this.ClubName = clubName;
-            this.ClubNameAbreviation = clubNameAbreviation;
-            this.ClubSquad = clubSquad;
+            this.ID = iD;
+            this.Name = name;
+            this.LongName = longName;
+            this.SixLetterName = sixLetterName;
+            this.City = city;
+            this.LeagueID = leagueID;
+            this.Nation = nation;
+            this.YearFounded = yearFounded;
+            this.Status = status;
+            this.HomeStadium = homeStadium;
+            this.TeamColour = teamColour;
+            this.HomeStadiumCapacity = homeStadiumCapacity;
+            this.Squad = squad;
+            this.Reputation = 0;
+            this.Morale = 10;
         }
 
-        public void UpdateSquadList(List<FootballPlayer> clubSquad)
+        public void UpdateSquadList(List<FootballPlayer> squad)
         {
-            this.ClubSquad = clubSquad;
+            this.Squad = squad;
         }
 
     }

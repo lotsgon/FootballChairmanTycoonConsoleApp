@@ -1,0 +1,362 @@
+[
+    {
+        "ID": 1,
+        "City": "Thetford",
+        "Name": "Thetford Argyle",
+        "LongName": "Thetford Argyle Football Club",
+        "SixLetterName": "Thetford Argyle",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1878,
+        "Status": "Professional",
+        "HomeStadium": "Meserole Street Arena",
+        "TeamColour": {
+            "x": 44,
+            "y": 184,
+            "z": 48
+        },
+        "HomeStadiumCapacity": 65255
+    },
+    {
+        "ID": 2,
+        "City": "Egremont",
+        "Name": "Egremont Athletic",
+        "LongName": "Egremont Athletic Football Club",
+        "SixLetterName": "Egremont Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1997,
+        "Status": "Professional",
+        "HomeStadium": "Cass Place Road",
+        "TeamColour": {
+            "x": 199,
+            "y": 148,
+            "z": 84
+        },
+        "HomeStadiumCapacity": 66457
+    },
+    {
+        "ID": 3,
+        "City": "Shirebrook",
+        "Name": "Shirebrook Wednesday",
+        "LongName": "Shirebrook Wednesday Football Club",
+        "SixLetterName": "Shirebrook Wednesday",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1889,
+        "Status": "Professional",
+        "HomeStadium": "Shirebrook Wednesday Arena",
+        "TeamColour": {
+            "x": 85,
+            "y": 169,
+            "z": 21
+        },
+        "HomeStadiumCapacity": 60032
+    },
+    {
+        "ID": 4,
+        "City": "Bingham",
+        "Name": "Bingham County",
+        "LongName": "Bingham County Football Club",
+        "SixLetterName": "Bingham County",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1997,
+        "Status": "Professional",
+        "HomeStadium": "Cumberland Walk Lane",
+        "TeamColour": {
+            "x": 147,
+            "y": 149,
+            "z": 150
+        },
+        "HomeStadiumCapacity": 18708
+    },
+    {
+        "ID": 5,
+        "City": "Northampton",
+        "Name": "Northampton Palace",
+        "LongName": "Northampton Palace Football Club",
+        "SixLetterName": "Northampton Palace",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1918,
+        "Status": "Professional",
+        "HomeStadium": "Qiao Way",
+        "TeamColour": {
+            "x": 251,
+            "y": 254,
+            "z": 112
+        },
+        "HomeStadiumCapacity": 28950
+    },
+    {
+        "ID": 6,
+        "City": "Heywood",
+        "Name": "Heywood Harriers",
+        "LongName": "Heywood Harriers Football Club",
+        "SixLetterName": "Heywood Harriers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2000,
+        "Status": "Professional",
+        "HomeStadium": "Medesign Way",
+        "TeamColour": {
+            "x": 44,
+            "y": 60,
+            "z": 171
+        },
+        "HomeStadiumCapacity": 27572
+    },
+    {
+        "ID": 7,
+        "City": "Beeston",
+        "Name": "Beeston Victoria",
+        "LongName": "Beeston Victoria Football Club",
+        "SixLetterName": "Beeston Victoria",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1952,
+        "Status": "Professional",
+        "HomeStadium": "Suydam Street Stadium",
+        "TeamColour": {
+            "x": 144,
+            "y": 82,
+            "z": 134
+        },
+        "HomeStadiumCapacity": 34230
+    },
+    {
+        "ID": 8,
+        "City": "Bampton",
+        "Name": "Bampton City",
+        "LongName": "Bampton City Football Club",
+        "SixLetterName": "Bampton City",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1938,
+        "Status": "Professional",
+        "HomeStadium": "Bampton City Arena",
+        "TeamColour": {
+            "x": 240,
+            "y": 203,
+            "z": 149
+        },
+        "HomeStadiumCapacity": 14686
+    },
+    {
+        "ID": 9,
+        "City": "Minster",
+        "Name": "Minster Harriers",
+        "LongName": "Minster Harriers Football Club",
+        "SixLetterName": "Minster Harriers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2008,
+        "Status": "Professional",
+        "HomeStadium": "Independence Avenue Road",
+        "TeamColour": {
+            "x": 233,
+            "y": 225,
+            "z": 35
+        },
+        "HomeStadiumCapacity": 61882
+    },
+    {
+        "ID": 10,
+        "City": "Minehead",
+        "Name": "Minehead Forest",
+        "LongName": "Minehead Forest Football Club",
+        "SixLetterName": "Minehead Forest",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1931,
+        "Status": "Professional",
+        "HomeStadium": "Thatford Avenue Road",
+        "TeamColour": {
+            "x": 144,
+            "y": 78,
+            "z": 73
+        },
+        "HomeStadiumCapacity": 49708
+    },
+    {
+        "ID": 11,
+        "City": "Shaw and Crompton",
+        "Name": "Shaw and Crompton Villa",
+        "LongName": "Shaw and Crompton Villa Football Club",
+        "SixLetterName": "Shaw and Crompton Villa",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1941,
+        "Status": "Professional",
+        "HomeStadium": "Roboid Road",
+        "TeamColour": {
+            "x": 97,
+            "y": 88,
+            "z": 94
+        },
+        "HomeStadiumCapacity": 60228
+    },
+    {
+        "ID": 12,
+        "City": "Southall",
+        "Name": "Southall Hotspur",
+        "LongName": "Southall Hotspur Football Club",
+        "SixLetterName": "Southall Hotspur",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1928,
+        "Status": "Professional",
+        "HomeStadium": "Cambridge Place Arena",
+        "TeamColour": {
+            "x": 83,
+            "y": 208,
+            "z": 116
+        },
+        "HomeStadiumCapacity": 22206
+    },
+    {
+        "ID": 13,
+        "City": "Cadishead",
+        "Name": "Cadishead Northfleet",
+        "LongName": "Cadishead Northfleet Football Club",
+        "SixLetterName": "Cadishead Northfleet",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1879,
+        "Status": "Professional",
+        "HomeStadium": "Berkeley Place Way",
+        "TeamColour": {
+            "x": 157,
+            "y": 154,
+            "z": 164
+        },
+        "HomeStadiumCapacity": 66080
+    },
+    {
+        "ID": 14,
+        "City": "Southampton",
+        "Name": "Southampton Dons",
+        "LongName": "Southampton Dons Football Club",
+        "SixLetterName": "Southampton Dons",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1956,
+        "Status": "Professional",
+        "HomeStadium": "Vanderveer Street Arena",
+        "TeamColour": {
+            "x": 172,
+            "y": 14,
+            "z": 23
+        },
+        "HomeStadiumCapacity": 21561
+    },
+    {
+        "ID": 15,
+        "City": "Newmarket",
+        "Name": "Newmarket Stanley",
+        "LongName": "Newmarket Stanley Football Club",
+        "SixLetterName": "Newmarket Stanley",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1980,
+        "Status": "Professional",
+        "HomeStadium": "Mill Road Way",
+        "TeamColour": {
+            "x": 237,
+            "y": 45,
+            "z": 212
+        },
+        "HomeStadiumCapacity": 15306
+    },
+    {
+        "ID": 16,
+        "City": "Coningsby",
+        "Name": "Coningsby Orient",
+        "LongName": "Coningsby Orient Football Club",
+        "SixLetterName": "Coningsby Orient",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1944,
+        "Status": "Professional",
+        "HomeStadium": "Coningsby Orient Lane",
+        "TeamColour": {
+            "x": 49,
+            "y": 117,
+            "z": 202
+        },
+        "HomeStadiumCapacity": 51803
+    },
+    {
+        "ID": 17,
+        "City": "Hexham",
+        "Name": "Hexham Vale",
+        "LongName": "Hexham Vale Football Club",
+        "SixLetterName": "Hexham Vale",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1899,
+        "Status": "Professional",
+        "HomeStadium": "Chauncey Street Stadium",
+        "TeamColour": {
+            "x": 24,
+            "y": 138,
+            "z": 78
+        },
+        "HomeStadiumCapacity": 22924
+    },
+    {
+        "ID": 18,
+        "City": "Wareham",
+        "Name": "Wareham Redbridge",
+        "LongName": "Wareham Redbridge Football Club",
+        "SixLetterName": "Wareham Redbridge",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1944,
+        "Status": "Professional",
+        "HomeStadium": "Wareham Redbridge Way",
+        "TeamColour": {
+            "x": 250,
+            "y": 154,
+            "z": 235
+        },
+        "HomeStadiumCapacity": 66967
+    },
+    {
+        "ID": 19,
+        "City": "Ware",
+        "Name": "Ware Town",
+        "LongName": "Ware Town Football Club",
+        "SixLetterName": "Ware Town",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1965,
+        "Status": "Professional",
+        "HomeStadium": "Jerome Avenue Stadium",
+        "TeamColour": {
+            "x": 141,
+            "y": 204,
+            "z": 57
+        },
+        "HomeStadiumCapacity": 11341
+    },
+    {
+        "ID": 20,
+        "City": "Birmingham",
+        "Name": "Birmingham Dons",
+        "LongName": "Birmingham Dons Football Club",
+        "SixLetterName": "Birmingham Dons",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2004,
+        "Status": "Professional",
+        "HomeStadium": "Neteria Stadium",
+        "TeamColour": {
+            "x": 23,
+            "y": 19,
+            "z": 94
+        },
+        "HomeStadiumCapacity": 11153
+    }
+]

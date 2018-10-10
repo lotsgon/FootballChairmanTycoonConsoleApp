@@ -1,0 +1,362 @@
+[
+    {
+        "ID": 0,
+        "City": "Barnet",
+        "Name": "Barnet Palace",
+        "LongName": "Barnet Palace Football Club",
+        "SixLetterName": "Barnet Palace",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2005,
+        "Status": "Professional",
+        "HomeStadium": "Barnet Palace Stadium",
+        "TeamColour": {
+            "x": 51,
+            "y": 18,
+            "z": 127
+        },
+        "HomeStadiumCapacity": 19800
+    },
+    {
+        "ID": 1,
+        "City": "Neithrop",
+        "Name": "Neithrop Orient",
+        "LongName": "Neithrop Orient Football Club",
+        "SixLetterName": "Neithrop Orient",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1996,
+        "Status": "Professional",
+        "HomeStadium": "Neithrop Orient Stadium",
+        "TeamColour": {
+            "x": 16,
+            "y": 75,
+            "z": 104
+        },
+        "HomeStadiumCapacity": 27790
+    },
+    {
+        "ID": 2,
+        "City": "Holbeach",
+        "Name": "Holbeach Wanderers",
+        "LongName": "Holbeach Wanderers Football Club",
+        "SixLetterName": "Holbeach Wanderers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1991,
+        "Status": "Professional",
+        "HomeStadium": "Holbeach Wanderers Way",
+        "TeamColour": {
+            "x": 110,
+            "y": 253,
+            "z": 157
+        },
+        "HomeStadiumCapacity": 54891
+    },
+    {
+        "ID": 3,
+        "City": "Frome",
+        "Name": "Frome Athletic",
+        "LongName": "Frome Athletic Football Club",
+        "SixLetterName": "Frome Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1958,
+        "Status": "Professional",
+        "HomeStadium": "Frome Athletic Road",
+        "TeamColour": {
+            "x": 205,
+            "y": 238,
+            "z": 59
+        },
+        "HomeStadiumCapacity": 50703
+    },
+    {
+        "ID": 4,
+        "City": "Leatherhead",
+        "Name": "Leatherhead Victoria",
+        "LongName": "Leatherhead Victoria Football Club",
+        "SixLetterName": "Leatherhead Victoria",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1996,
+        "Status": "Professional",
+        "HomeStadium": "Isotrack Way",
+        "TeamColour": {
+            "x": 89,
+            "y": 220,
+            "z": 52
+        },
+        "HomeStadiumCapacity": 29992
+    },
+    {
+        "ID": 5,
+        "City": "Marazion",
+        "Name": "Marazion Athletic",
+        "LongName": "Marazion Athletic Football Club",
+        "SixLetterName": "Marazion Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1969,
+        "Status": "Professional",
+        "HomeStadium": "Marazion Athletic Stadium",
+        "TeamColour": {
+            "x": 14,
+            "y": 234,
+            "z": 233
+        },
+        "HomeStadiumCapacity": 20076
+    },
+    {
+        "ID": 6,
+        "City": "Telford",
+        "Name": "Telford Harriers",
+        "LongName": "Telford Harriers Football Club",
+        "SixLetterName": "Telford Harriers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1987,
+        "Status": "Professional",
+        "HomeStadium": "Slambda Way",
+        "TeamColour": {
+            "x": 157,
+            "y": 33,
+            "z": 180
+        },
+        "HomeStadiumCapacity": 32970
+    },
+    {
+        "ID": 7,
+        "City": "Looe",
+        "Name": "Looe Diamonds",
+        "LongName": "Looe Diamonds Football Club",
+        "SixLetterName": "Looe Diamonds",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1938,
+        "Status": "Professional",
+        "HomeStadium": "Looe Diamonds Stadium",
+        "TeamColour": {
+            "x": 159,
+            "y": 115,
+            "z": 180
+        },
+        "HomeStadiumCapacity": 31911
+    },
+    {
+        "ID": 8,
+        "City": "Highbridge",
+        "Name": "Highbridge Albion",
+        "LongName": "Highbridge Albion Football Club",
+        "SixLetterName": "Highbridge Albion",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 2008,
+        "Status": "Professional",
+        "HomeStadium": "Ovington Court Park",
+        "TeamColour": {
+            "x": 178,
+            "y": 74,
+            "z": 38
+        },
+        "HomeStadiumCapacity": 61761
+    },
+    {
+        "ID": 9,
+        "City": "Worthing",
+        "Name": "Worthing Town",
+        "LongName": "Worthing Town Football Club",
+        "SixLetterName": "Worthing Town",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1891,
+        "Status": "Professional",
+        "HomeStadium": "Frost Street Road",
+        "TeamColour": {
+            "x": 53,
+            "y": 51,
+            "z": 53
+        },
+        "HomeStadiumCapacity": 58733
+    },
+    {
+        "ID": 10,
+        "City": "Crowland",
+        "Name": "Crowland Wanderers",
+        "LongName": "Crowland Wanderers Football Club",
+        "SixLetterName": "Crowland Wanderers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1923,
+        "Status": "Professional",
+        "HomeStadium": "Equicom Way",
+        "TeamColour": {
+            "x": 68,
+            "y": 157,
+            "z": 126
+        },
+        "HomeStadiumCapacity": 53854
+    },
+    {
+        "ID": 11,
+        "City": "Bury St Edmunds",
+        "Name": "Bury St Edmunds Villa",
+        "LongName": "Bury St Edmunds Villa Football Club",
+        "SixLetterName": "Bury St Edmunds Villa",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1994,
+        "Status": "Professional",
+        "HomeStadium": "Forbell Street Way",
+        "TeamColour": {
+            "x": 175,
+            "y": 11,
+            "z": 22
+        },
+        "HomeStadiumCapacity": 60938
+    },
+    {
+        "ID": 12,
+        "City": "Earlestown",
+        "Name": "Earlestown Palace",
+        "LongName": "Earlestown Palace Football Club",
+        "SixLetterName": "Earlestown Palace",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1910,
+        "Status": "Professional",
+        "HomeStadium": "Earlestown Palace Way",
+        "TeamColour": {
+            "x": 134,
+            "y": 226,
+            "z": 102
+        },
+        "HomeStadiumCapacity": 40617
+    },
+    {
+        "ID": 13,
+        "City": "Rackheath",
+        "Name": "Rackheath Rangers",
+        "LongName": "Rackheath Rangers Football Club",
+        "SixLetterName": "Rackheath Rangers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1888,
+        "Status": "Professional",
+        "HomeStadium": "Netility Way",
+        "TeamColour": {
+            "x": 173,
+            "y": 110,
+            "z": 13
+        },
+        "HomeStadiumCapacity": 26969
+    },
+    {
+        "ID": 14,
+        "City": "Welwyn Garden City",
+        "Name": "Welwyn Garden City Borough",
+        "LongName": "Welwyn Garden City Borough Football Club",
+        "SixLetterName": "Welwyn Garden City Borough",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1873,
+        "Status": "Professional",
+        "HomeStadium": "Highland Avenue Park",
+        "TeamColour": {
+            "x": 105,
+            "y": 32,
+            "z": 120
+        },
+        "HomeStadiumCapacity": 16872
+    },
+    {
+        "ID": 15,
+        "City": "Tonbridge",
+        "Name": "Tonbridge Athletic",
+        "LongName": "Tonbridge Athletic Football Club",
+        "SixLetterName": "Tonbridge Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1878,
+        "Status": "Professional",
+        "HomeStadium": "Confrenzy Road",
+        "TeamColour": {
+            "x": 52,
+            "y": 200,
+            "z": 0
+        },
+        "HomeStadiumCapacity": 61033
+    },
+    {
+        "ID": 16,
+        "City": "Walton on Thames",
+        "Name": "Walton on Thames County",
+        "LongName": "Walton on Thames County Football Club",
+        "SixLetterName": "Walton on Thames County",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1912,
+        "Status": "Professional",
+        "HomeStadium": "Louisa Street Stadium",
+        "TeamColour": {
+            "x": 129,
+            "y": 136,
+            "z": 117
+        },
+        "HomeStadiumCapacity": 20173
+    },
+    {
+        "ID": 17,
+        "City": "High Wycombe",
+        "Name": "High Wycombe Wanderers",
+        "LongName": "High Wycombe Wanderers Football Club",
+        "SixLetterName": "High Wycombe Wanderers",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1945,
+        "Status": "Professional",
+        "HomeStadium": "Delphide Road",
+        "TeamColour": {
+            "x": 224,
+            "y": 240,
+            "z": 189
+        },
+        "HomeStadiumCapacity": 65867
+    },
+    {
+        "ID": 18,
+        "City": "Bridlington",
+        "Name": "Bridlington Athletic",
+        "LongName": "Bridlington Athletic Football Club",
+        "SixLetterName": "Bridlington Athletic",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1931,
+        "Status": "Professional",
+        "HomeStadium": "Cooke Court Stadium",
+        "TeamColour": {
+            "x": 149,
+            "y": 188,
+            "z": 252
+        },
+        "HomeStadiumCapacity": 50359
+    },
+    {
+        "ID": 19,
+        "City": "Southminster",
+        "Name": "Southminster Villa",
+        "LongName": "Southminster Villa Football Club",
+        "SixLetterName": "Southminster Villa",
+        "LeagueID": 1,
+        "Nation": "England",
+        "YearFounded": 1910,
+        "Status": "Professional",
+        "HomeStadium": "Ozean Way",
+        "TeamColour": {
+            "x": 84,
+            "y": 64,
+            "z": 153
+        },
+        "HomeStadiumCapacity": 60097
+    }
+]
