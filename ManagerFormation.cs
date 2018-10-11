@@ -1,4 +1,6 @@
-﻿namespace FootballChairmanTycoonConsoleApp
+﻿using System.Collections.Generic;
+
+namespace FootballChairmanTycoonConsoleApp
 {
     public class ManagerFormation
     {

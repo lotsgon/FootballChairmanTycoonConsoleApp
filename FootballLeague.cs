@@ -100,7 +100,7 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
             {
                 var clubStats = club.Statistics;
 
-                Win32.SetConsoleTextAttribute(Win32.GetStdHandle(-11), (short)(club.TeamColour.X + club.TeamColour.Y + club.TeamColour.Z));
+                //Win32.SetConsoleTextAttribute(Win32.GetStdHandle(-11), (short)(club.TeamColour.X + club.TeamColour.Y + club.TeamColour.Z));
 
                 Console.WriteLine("{0,10} {1,30}{2,10}{3,10}{4,10}{5,10}{6,10}{7,10}{8,10}{9,10}",
                               position,
@@ -113,7 +113,7 @@ namespace FootballChairmanTycoonConsoleApp.JsonData
                               clubStats.GoalsAgainst,
                               clubStats.GoalDifference,
                               clubStats.Points);
-                Win32.SetConsoleTextAttribute(Win32.GetStdHandle(-11), (short)0);
+                //Win32.SetConsoleTextAttribute(Win32.GetStdHandle(-11), (short)0);
                 position++;
             }
         }

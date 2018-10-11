@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace FootballChairmanTycoonConsoleApp
@@ -25,6 +26,8 @@ namespace FootballChairmanTycoonConsoleApp
         public List<FootballPlayer> Squad { get; private set; } = new List<FootballPlayer>();
         public ClubStatistics Statistics { get; private set; } = new ClubStatistics();
         public FootballManager Manager { get; private set; }
+        public List<FootballPlayer> OverallLineUp { get; private set; } = new List<FootballPlayer>();
+        public int OverallLineUpRating { get; private set; }
 
         public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad, FootballManager manager)
         {
@@ -52,7 +55,7 @@ namespace FootballChairmanTycoonConsoleApp
 
         private void RegisterSquadToClub(List<FootballPlayer> squad)
         {
-            foreach(FootballPlayer player in squad)
+            foreach (FootballPlayer player in squad)
             {
                 player.SetCurrentClub(this);
             }
@@ -90,6 +93,36 @@ namespace FootballChairmanTycoonConsoleApp
         public void UpdateMoney(int amount)
         {
             this.Money += amount;
+        }
+
+        public void UpdateMatchDayLineUp()
+        {
+            OverallLineUp.Clear();
+
+            var goal = this.Squad.Where(x => x.Position == PlayerPosition.GK).OrderByDescending(x => x.OverallRating).FirstOrDefault();
+
+            var defence = this.Squad.Where(x => x.Position == PlayerPosition.RB || x.Position == PlayerPosition.LB || x.Position == PlayerPosition.CB).OrderByDescending(x => x.OverallRating);
+
+            for (int i = 0; i < this.Manager.Formation.Defence - 1; i++)
+            {
+                OverallLineUp.Add(defence.ElementAtOrDefault(i));
+            }
+
+            var midfield = this.Squad.Where(x => x.Position == PlayerPosition.RM || x.Position == PlayerPosition.LM || x.Position == PlayerPosition.CM).OrderByDescending(x => x.OverallRating);
+
+            for (int i = 0; i < this.Manager.Formation.Midfield - 1; i++)
+            {
+                OverallLineUp.Add(defence.ElementAtOrDefault(i));
+            }
+
+            var attack = this.Squad.Where(x => x.Position == PlayerPosition.ST).OrderByDescending(x => x.OverallRating);
+
+            for (int i = 0; i < this.Manager.Formation.Attack - 1; i++)
+            {
+                OverallLineUp.Add(defence.ElementAtOrDefault(i));
+            }
+
+            OverallLineUpRating = (int)OverallLineUp.Select(x => x.OverallRating).Average();
         }
 
     }

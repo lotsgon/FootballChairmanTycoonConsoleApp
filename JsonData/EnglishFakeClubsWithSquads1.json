@@ -4376,36 +4376,36 @@
 	{
 		"ID": 18,
 		"City": "Wareham",
-		"Name": "Wareham Redbridge",
-		"LongName": "Wareham Redbridge Football Club",
-		"SixLetterName": "Wareham Redbridge",
+		"Name": "Wareham United",
+		"LongName": "Wareham United Football Club",
+		"SixLetterName": "Wareham United",
 		"LeagueID": 1,
 		"Nation": "England",
 		"YearFounded": 1944,
 		"Status": "Professional",
-		"HomeStadium": "Wareham Redbridge Way",
+		"HomeStadium": "Wareham United Way",
 		"TeamColour": {
 			"x": 250,
 			"y": 154,
 			"z": 235
 		},
-			"HomeStadiumCapacity": 66967,
-			"Manager": {
-				"ID": 18,
-				"FirstName": "Conley",
-				"Surname": "Holcomb",
-				"Age": 31,
-				"Formation": {
-					"Name": "3-5-1-1",
-					"Goal": 1,
-					"Defence": 3,
-					"Midfield": 6,
-					"Attack": 1
-				},
-				"OverallRating": 84,
-				"PotentialRating": 99,
-				"Wage": 420000
+		"HomeStadiumCapacity": 66967,
+		"Manager": {
+			"ID": 18,
+			"FirstName": "Conley",
+			"Surname": "Holcomb",
+			"Age": 31,
+			"Formation": {
+				"Name": "3-5-1-1",
+				"Goal": 1,
+				"Defence": 3,
+				"Midfield": 6,
+				"Attack": 1
 			},
+			"OverallRating": 84,
+			"PotentialRating": 99,
+			"Wage": 420000
+		},
 		"Squad": [
 			{
 				"ID": 10,

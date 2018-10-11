@@ -24,38 +24,38 @@ namespace FootballChairmanTycoonConsoleApp
 
             TransferSimulation.SimulateTransferDay(clubList, playerList);
 
-            var playersMoved = playerList.Where(x => x.JustMoved);
+            //var playersMoved = playerList.Where(x => x.JustMoved);
 
-            foreach (FootballPlayer player in playersMoved)
-            {
-                Console.WriteLine("{0,30}{1,30}{2,10}{3,10}{4,10}{5,10}{6,10}",
-                              player.ShortName,
-                              player.CurrentClub.Name,
-                              player.PreviousClub.Name,
-                              player.Position,
-                              player.Value,
-                              player.OverallRating,
-                              player.JustMoved);
-            }
+            //foreach (FootballPlayer player in playersMoved)
+            //{
+            //    Console.WriteLine("{0,30}{1,30}{2,10}{3,10}{4,10}{5,10}{6,10}",
+            //                  player.ShortName,
+            //                  player.CurrentClub.Name,
+            //                  player.PreviousClub.Name,
+            //                  player.Position,
+            //                  player.Value,
+            //                  player.OverallRating,
+            //                  player.JustMoved);
+            //}
 
             //Console.WriteLine(league.Fixtures.Count);
 
             ////////////////////////////////////////////////////////////////////////
             // SEASON SIMULATION
             ////////////////////////////////////////////////////////////////////////
-            //foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
-            //{
-            //    Console.WriteLine($"\nMatch Round {fixtureRound.LeagueRound}\n");
+            foreach (LeagueFixtureRound fixtureRound in league.Fixtures)
+            {
+                Console.WriteLine($"\nMatch Round {fixtureRound.LeagueRound}\n");
 
-            //    foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
-            //    {
-            //        var homeTeam = fixture.HomeTeam.Name;
-            //        var awayTeam = fixture.AwayTeam.Name;
-            //        var result = MatchSimulation.GetMatchResult(fixture);
+                foreach (LeagueFixture fixture in fixtureRound.LeagueRoundFixtures)
+                {
+                    var homeTeam = fixture.HomeTeam.Name;
+                    var awayTeam = fixture.AwayTeam.Name;
+                    var result = MatchSimulation.GetMatchResult(fixture);
 
-            //        Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
-            //    }
-            //}
+                    Console.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
+                }
+            }
 
             ////////////////////////////////////////////////////////////////////////
             // DEBUG FIXTURE CHECKER
@@ -85,7 +85,7 @@ namespace FootballChairmanTycoonConsoleApp
             //    }
             //}
 
-            //league.LeagueStandings();
+            league.LeagueStandings();
 
             //Console.WriteLine(playerList[0].PlayerValue);
 
