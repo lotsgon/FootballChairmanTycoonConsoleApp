@@ -125,5 +125,26 @@ namespace FootballChairmanTycoonConsoleApp
             OverallLineUpRating = (int)OverallLineUp.Select(x => x.OverallRating).Average();
         }
 
+        public void ShowSquadList()
+        {
+            var orderedSquad = Squad.OrderByDescending(x => x.Position).ThenBy(x => x.OverallRating).ThenBy(x => x.Age);
+
+            Console.WriteLine($"{Name}\n");
+            Console.WriteLine("{0,0}{1,10}{2,20}{3,10}",
+                              "Pos",
+                              "Age",
+                              "Name",
+                              "Ovr");
+
+            foreach (FootballPlayer player in orderedSquad)
+            {
+                Console.WriteLine("{0,0} {1,10}{2,20}{3,10}",
+                              player.Position,
+                              player.Age,
+                              player.ShortName,
+                              player.OverallRating);
+            }
+        }
+
     }
 }
