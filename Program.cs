@@ -12,10 +12,12 @@ namespace FootballChairmanTycoonConsoleApp
         {
             List<FootballPlayer> playerList = new List<FootballPlayer>();
             var clubList = JsonReader.ReadJsonClubsFile();
+            var managerList = JsonReader.ReadJsonManagersFile();
 
             foreach (FootballClub club in clubList)
             {
                 playerList.AddRange(club.Squad);
+                managerList.Add(club.Manager);
             }
 
             var league = new FootballLeague("England", clubList, "Premier League");

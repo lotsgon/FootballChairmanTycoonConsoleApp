@@ -24,8 +24,9 @@ namespace FootballChairmanTycoonConsoleApp
         public int Morale { get; private set; }
         public List<FootballPlayer> Squad { get; private set; } = new List<FootballPlayer>();
         public ClubStatistics Statistics { get; private set; } = new ClubStatistics();
+        public FootballManager Manager { get; private set; }
 
-        public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad)
+        public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad, FootballManager manager)
         {
             this.ID = iD;
             this.Name = name;
@@ -45,6 +46,8 @@ namespace FootballChairmanTycoonConsoleApp
             this.Money = this.HomeStadiumCapacity * 7000;
             this.Value = (this.Reputation * 75000) + this.Money;
             this.Morale = 10;
+            this.Manager = manager;
+            this.Manager.SetCurrentClub(this);
         }
 
         private void RegisterSquadToClub(List<FootballPlayer> squad)
@@ -54,7 +57,6 @@ namespace FootballChairmanTycoonConsoleApp
                 player.SetCurrentClub(this);
             }
         }
-
 
         public void UpdateSquadList(List<FootballPlayer> squad)
         {
