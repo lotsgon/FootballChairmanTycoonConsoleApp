@@ -34,6 +34,11 @@ namespace FootballChairmanTycoonConsoleApp
                 return;
             }
 
+            if(targetPlayer.CurrentClub.Squad.Count <= targetPlayer.CurrentClub.SquadMinimum)
+            {
+                return;
+            }
+
             int targetPlayerValue = (int)(targetPlayer.Value * 1.2);
 
             if(targetPlayerValue < transferBudget)
@@ -49,6 +54,23 @@ namespace FootballChairmanTycoonConsoleApp
                 sellingClub.Squad.Remove(targetPlayer);
             }
 
+        }
+
+        public static void ShowWeeklyTransfers(List<FootballPlayer> playerList)
+        {
+            var playersMoved = playerList.Where(x => x.JustMoved);
+
+            foreach (FootballPlayer player in playersMoved)
+            {
+                Console.WriteLine("{0,30}{1,30}{2,10}{3,10}{4,10}{5,10}{6,10}",
+                              player.ShortName,
+                              player.CurrentClub.Name,
+                              player.PreviousClub.Name,
+                              player.Position,
+                              player.Value,
+                              player.OverallRating,
+                              player.JustMoved);
+            }
         }
 
         private static void UpdateSquadsAfterTransfers(List<FootballClub> clubList, List<FootballPlayer> playerList)

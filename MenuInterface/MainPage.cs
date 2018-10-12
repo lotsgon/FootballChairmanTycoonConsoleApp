@@ -1,16 +1,29 @@
 ﻿using EasyConsole;
+using FootballChairmanTycoonConsoleApp;
 
 namespace Demo.Pages
 {
     class MainPage : MenuPage
     {
-        public MainPage(Program program)
-            : base("Main Page", program,
+        Season Season;
+
+        public MainPage(Program program, Season season)
+            : base($"Week - Year", program,
                   new Option("View Teams", () => program.NavigateTo<ViewTeams>()),
                   new Option("View League", () => program.NavigateTo<LeagueView>()),
-                  new Option("Sim Match Week", () => program.NavigateTo<MatchRoundResults>()),
+                  new Option("Simulate Season Week", () => program.NavigateTo<SimulateSeasonWeek>()),
                   new Option("Exit", () => System.Environment.Exit(0)))
         {
+            this.Season = season;
         }
+
+        public override void Display()
+        {
+            this.Title = $"Week {Season.Week} - {Season.Year}";
+
+            base.Display();
+        }
+
+
     }
 }

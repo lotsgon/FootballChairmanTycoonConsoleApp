@@ -10,25 +10,12 @@ namespace Demo
         public DemoProgram()
             : base("Football Chairman Tycoon", breadcrumbHeader: true)
         {
-            List<FootballPlayer> playerList = new List<FootballPlayer>();
-            var clubList = JsonReader.ReadJsonClubsFile();
-            var managerList = JsonReader.ReadJsonManagersFile();
+            var season = new Season();
 
-            foreach (FootballClub club in clubList)
-            {
-                playerList.AddRange(club.Squad);
-                managerList.Add(club.Manager);
-            }
-
-            var league = new FootballLeague("England", clubList, "Premier League");
-
-            AddPage(new MainPage(this));
-            AddPage(new ViewTeams(this, clubList));
-            AddPage(new Page1A(this));
-            AddPage(new Page1Ai(this));
-            AddPage(new Page1B(this));
-            AddPage(new LeagueView(this, league));
-            AddPage(new MatchRoundResults(this, league.Fixtures));
+            AddPage(new MainPage(this, season));
+            AddPage(new ViewTeams(this, season.ClubList));
+            AddPage(new LeagueView(this, season.League));
+            AddPage(new SimulateSeasonWeek(this, season));
 
             SetPage<MainPage>();
         }

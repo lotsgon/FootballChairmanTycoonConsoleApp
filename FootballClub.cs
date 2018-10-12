@@ -28,6 +28,7 @@ namespace FootballChairmanTycoonConsoleApp
         public FootballManager Manager { get; private set; }
         public List<FootballPlayer> OverallLineUp { get; private set; } = new List<FootballPlayer>();
         public int OverallLineUpRating { get; private set; }
+        public int SquadMinimum { get; private set; } = 16;
 
         public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad, FootballManager manager)
         {
