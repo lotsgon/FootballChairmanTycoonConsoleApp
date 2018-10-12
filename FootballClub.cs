@@ -51,7 +51,7 @@ namespace FootballChairmanTycoonConsoleApp
             this.Value = (this.Reputation * 75000) + this.Money;
             this.Morale = 10;
             this.Manager = manager;
-            this.Manager.SetCurrentClub(this);
+            this.Manager?.SetCurrentClub(this);
         }
 
         private void RegisterSquadToClub(List<FootballPlayer> squad)
@@ -145,6 +145,18 @@ namespace FootballChairmanTycoonConsoleApp
                               player.ShortName,
                               player.OverallRating);
             }
+        }
+
+        public void ResetSeasonStats()
+        {
+            this.Statistics.Points = 0;
+            this.Statistics.GoalsAgainst = 0;
+            this.Statistics.GoalsFor = 0;
+            this.Statistics.MatchesDrew = 0;
+            this.Statistics.MatchesLost = 0;
+            this.Statistics.MatchesWon = 0;
+            this.Statistics.MatchesPlayed = 0;
+            this.Statistics.UpdateGoalDifference(); ;
         }
 
     }

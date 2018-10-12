@@ -8,11 +8,11 @@ namespace FootballChairmanTycoonConsoleApp
     {
         public static void SimulateTransferDay(List<FootballClub> clubList, List<FootballPlayer> playerList)
         {
-            foreach(FootballClub club in clubList)
+            foreach (FootballClub club in clubList.Where(x=> x.ID != 0))
             {
-                var rand = new Random().Next(0,3);
+                var rand = new Random().Next(0, 3);
 
-                for(int i =0; i < rand; i++)
+                for (int i = 0; i < rand; i++)
                 {
                     BuyPlayer(club, clubList, playerList);
                 }
@@ -22,7 +22,7 @@ namespace FootballChairmanTycoonConsoleApp
         private static void BuyPlayer(FootballClub club, List<FootballClub> clubList, List<FootballPlayer> playerList)
         {
             // update to 200 if player overall goes to 200
-            var clubRep = (club.Reputation / 100)+5;
+            var clubRep = (club.Reputation / 100) + 5;
             var transferBudget = club.Money * 0.75;
 
             var rand = new Random().Next(0, 300);
@@ -34,17 +34,38 @@ namespace FootballChairmanTycoonConsoleApp
                 return;
             }
 
-            if(targetPlayer.CurrentClub.Squad.Count <= targetPlayer.CurrentClub.SquadMinimum)
+            var sellingClub = targetPlayer.CurrentClub;
+
+            if (targetPlayer.CurrentClub.ID == 0)
+            {
+                targetPlayer.UpdateCurrentClub(club);
+
+                club.UpdateValue(targetPlayer.Value / 2);
+                club.Squad.Add(targetPlayer);
+
+                sellingClub.Squad.Remove(targetPlayer);
+                return;
+            }
+
+            if (sellingClub.Squad.Count <= sellingClub.SquadMinimum)
+            {
+                return;
+            }
+
+            var validGK = sellingClub.Squad.Count(x => x.Position == PlayerPosition.GK) <= 2;
+            var validDF = sellingClub.Squad.Count(x => x.Position == PlayerPosition.RB || x.Position == PlayerPosition.CB || x.Position == PlayerPosition.LB) <= 5;
+            var validMF = sellingClub.Squad.Count(x => x.Position == PlayerPosition.RM || x.Position == PlayerPosition.CM || x.Position == PlayerPosition.LM) <= 6;
+            var validST = sellingClub.Squad.Count(x => x.Position == PlayerPosition.ST) <= 3;
+
+            if (!validGK || !validDF || !validMF || !validST)
             {
                 return;
             }
 
             int targetPlayerValue = (int)(targetPlayer.Value * 1.2);
 
-            if(targetPlayerValue < transferBudget)
+            if (targetPlayerValue < transferBudget)
             {
-                var sellingClub = targetPlayer.CurrentClub;
-
                 targetPlayer.UpdateCurrentClub(club);
 
                 club.UpdateMoneyAndValue(-targetPlayerValue);
@@ -80,6 +101,14 @@ namespace FootballChairmanTycoonConsoleApp
                 var squadList = playerList.Where(x => x.CurrentClub.Equals(club.ID)).ToList();
 
                 club.UpdateSquadList(squadList);
+            }
+        }
+
+        public static void UpdateSquadsForTransferWindow(List<FootballPlayer> playerList)
+        {
+            foreach (FootballPlayer player in playerList.Where(x => x.JustMoved))
+            {
+                player.UpdateJustMoved();
             }
         }
     }

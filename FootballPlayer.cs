@@ -40,12 +40,17 @@
         {
             this.PreviousClub = this.CurrentClub;
             this.CurrentClub = newClub;
-            this.JustMoved = true;
+            this.UpdateJustMoved();
         }
 
         public void SetCurrentClub(FootballClub club)
         {
             this.CurrentClub = club;
+        }
+
+        public void UpdateJustMoved()
+        {
+            this.JustMoved = !this.JustMoved; 
         }
     }
 }

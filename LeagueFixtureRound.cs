@@ -14,5 +14,11 @@ namespace FootballChairmanTycoonConsoleApp
             this.LeagueRound = leagueRound;
             this.SeasonWeek = seasonWeek;
         }
+
+        public void SetRoundAndWeek(int i)
+        {
+            this.LeagueRound = i;
+            this.SeasonWeek = i + 6;
+        }
     }
 }

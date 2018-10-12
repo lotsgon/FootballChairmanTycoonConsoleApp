@@ -1,5 +1,4 @@
 ﻿using EasyConsole;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +9,7 @@ namespace FootballChairmanTycoonConsoleApp
         public List<FootballPlayer> PlayerList { get; private set; } = new List<FootballPlayer>();
         public List<FootballClub> ClubList { get; private set; } = JsonReader.ReadJsonClubsFile();
         public List<FootballManager> ManagerList { get; private set; } = JsonReader.ReadJsonManagersFile();
-        public FootballLeague League { get; private set; }
+        public FootballLeague League { get; private set; } = JsonReader.ReadJsonLeaguesFile();
         public int Week { get; private set; } = 1;
         public int Year { get; private set; } = 2018;
         public int WeekMax { get; private set; } = 52;
@@ -21,34 +20,36 @@ namespace FootballChairmanTycoonConsoleApp
 
         public Season()
         {
+            ClubList.AddRange(League.Teams);
+
             foreach (FootballClub club in this.ClubList)
             {
                 this.PlayerList.AddRange(club.Squad);
                 this.ManagerList.Add(club.Manager);
             }
-
-            this.League = new FootballLeague("England", this.ClubList, "Premier League");
         }
 
         public void ProgressToNextWeek()
         {
-            if(Week > WeekMax)
+            if (Week == WeekMax)
             {
                 ResetSeason();
+                return;
             }
 
-            if(Week == 29)
+            if (Week == 29)
             {
-                this.Year+=1;
+                TransferSimulation.UpdateSquadsForTransferWindow(PlayerList);
+                this.Year += 1;
             }
 
-            if(Week >= SummerTransferWindowStart && Week <= SummerTransferWindowEnd || Week >= WinterTransferWindowStart && Week <= WinterTransferWindowEnd)
+            if (Week >= SummerTransferWindowStart && Week <= SummerTransferWindowEnd || Week >= WinterTransferWindowStart && Week <= WinterTransferWindowEnd)
             {
                 TransferSimulation.SimulateTransferDay(ClubList, PlayerList);
                 TransferSimulation.ShowWeeklyTransfers(PlayerList);
             }
 
-            var leagueStart = League.Fixtures[0].SeasonWeek;
+            var leagueStart = League.Fixtures.First().SeasonWeek;
             var leagueEnd = League.Fixtures.Last().SeasonWeek;
 
             if (Week >= leagueStart && Week <= leagueEnd)
@@ -56,7 +57,7 @@ namespace FootballChairmanTycoonConsoleApp
                 SimulateMatchWeek();
             }
 
-            this.Week+=1;
+            this.Week += 1;
         }
 
         private void ResetSeason()
@@ -64,11 +65,15 @@ namespace FootballChairmanTycoonConsoleApp
             this.Week = 1;
             League.Fixtures.Clear();
             League.GenerateLeagueFixtures();
+            foreach(FootballClub club in League.Teams)
+            {
+                club.ResetSeasonStats();
+            }
         }
 
         private void SimulateMatchWeek()
         {
-            var fixtureRound = League.Fixtures.Where(x=>x.SeasonWeek ==Week).FirstOrDefault();
+            var fixtureRound = League.Fixtures.Where(x => x.SeasonWeek == Week).FirstOrDefault();
 
             Output.WriteLine($"\nMatch Round {fixtureRound.LeagueRound}\n");
 

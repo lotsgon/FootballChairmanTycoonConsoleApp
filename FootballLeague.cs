@@ -11,15 +11,15 @@ namespace FootballChairmanTycoonConsoleApp
         public List<FootballClub> Teams { get; private set; }
         public List<LeagueFixtureRound> Fixtures { get; set; }
 
-        public FootballLeague(string leagueNation, List<FootballClub> leagueTeams, string leagueName)
+        public FootballLeague(string nation, List<FootballClub> teams, string name)
         {
-            this.Name = leagueName;
-            this.Nation = leagueNation;
-            this.Teams = leagueTeams;
-            this.Fixtures = this.GenerateLeagueFixtures();
+            this.Name = name;
+            this.Nation = nation;
+            this.Teams = teams;
+            GenerateLeagueFixtures();
         }
 
-        public List<LeagueFixtureRound> GenerateLeagueFixtures()
+        public void GenerateLeagueFixtures()
         {
             ShuffleTeamList(this.Teams);
 
@@ -30,15 +30,17 @@ namespace FootballChairmanTycoonConsoleApp
 
             for (int leagueRound = 1; leagueRound <= halfLeagueRounds; leagueRound++)
             {
-                sortedLeagueFixtures.Add(new LeagueFixtureRound(GetUniqueHomeFixtureRound(leagueRound, matchesPerWeek), leagueRound, leagueRound +6));
+                sortedLeagueFixtures.Add(new LeagueFixtureRound(GetUniqueHomeFixtureRound(leagueRound, matchesPerWeek), leagueRound, leagueRound + 6));
             }
 
             for (int leagueRound = 1; leagueRound <= halfLeagueRounds; leagueRound++)
             {
-                sortedLeagueFixtures.Add(new LeagueFixtureRound(GetReverseAwayFixtureRound(sortedLeagueFixtures[leagueRound - 1].LeagueRoundFixtures), leagueRound + halfLeagueRounds, leagueRound + halfLeagueRounds +6));
+                sortedLeagueFixtures.Add(new LeagueFixtureRound(GetReverseAwayFixtureRound(sortedLeagueFixtures[leagueRound - 1].LeagueRoundFixtures), leagueRound + halfLeagueRounds, leagueRound + halfLeagueRounds + 6));
             }
 
-            return sortedLeagueFixtures;
+            ShuffleFixtureList(sortedLeagueFixtures);
+
+            this.Fixtures = sortedLeagueFixtures;
         }
 
         private List<LeagueFixture> GetUniqueHomeFixtureRound(int fixtureRound, int matchesPerWeek)
@@ -127,6 +129,25 @@ namespace FootballChairmanTycoonConsoleApp
                 FootballClub value = teamList[k];
                 teamList[k] = teamList[n];
                 teamList[n] = value;
+            }
+        }
+
+        private void ShuffleFixtureList(List<LeagueFixtureRound> fixtureList)
+        {
+            int n = (fixtureList.Count / 2) - 1;
+            int k = 0;
+            while (n > k)
+            {
+                LeagueFixtureRound value = fixtureList[k];
+                fixtureList[k] = fixtureList[n + k + 1];
+                fixtureList[n + k + 1] = value;
+
+                k += 2;
+            }
+
+            for (int i = 0; i < 38; i++)
+            {
+                fixtureList[i].SetRoundAndWeek(i+1);
             }
         }
     }
