@@ -23,6 +23,8 @@ namespace Demo.Pages
             Output.WriteLine($"Stadium: {Club.HomeStadium}");
             Output.WriteLine($"Stadium Capacity: {Club.HomeStadiumCapacity}");
             Output.WriteLine($"Value: {Club.Value:C2}");
+            Output.WriteLine($"Chairman: {Club.Chairman.FullName}");
+            Output.WriteLine($"Chairman Fortune: {Club.Chairman.PersonalFortune:C2}");
             Output.WriteLine("Squad:");
             Club.ShowSquadList();
 

@@ -29,8 +29,9 @@ namespace FootballChairmanTycoonConsoleApp
         public List<FootballPlayer> OverallLineUp { get; private set; } = new List<FootballPlayer>();
         public int OverallLineUpRating { get; private set; }
         public int SquadMinimum { get; private set; } = 16;
+        public FootballChairman Chairman { get; private set; }
 
-        public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad, FootballManager manager)
+        public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad, FootballManager manager, FootballChairman chairman)
         {
             this.ID = iD;
             this.Name = name;
@@ -52,6 +53,8 @@ namespace FootballChairmanTycoonConsoleApp
             this.Morale = 10;
             this.Manager = manager;
             this.Manager?.SetCurrentClub(this);
+            this.Chairman = chairman;
+            this.Chairman?.SetCurrentClub(this);
         }
 
         private void RegisterSquadToClub(List<FootballPlayer> squad)

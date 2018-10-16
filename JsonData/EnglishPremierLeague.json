@@ -35,6 +35,16 @@
         "PotentialRating": 85,
         "Wage": 255000
       },
+      "Chairman": {
+        "ID": 1,
+        "FirstName": "Lamb",
+        "Surname": "Sullivan",
+        "Age": 76,
+        "Happiness": 68,
+        "OverallRating": 53,
+        "PotentialRating": 87,
+        "PersonalFortune": 880000000
+      },
       "Squad": [
         {
           "ID": 52,
@@ -202,6 +212,16 @@
         "OverallRating": 35,
         "PotentialRating": 72,
         "Wage": 175000
+      },
+      "Chairman": {
+        "ID": 2,
+        "FirstName": "Sherman",
+        "Surname": "Johnson",
+        "Age": 35,
+        "Happiness": 70,
+        "OverallRating": 57,
+        "PotentialRating": 94,
+        "PersonalFortune": 6707500000
       },
       "Squad": [
         {
@@ -448,6 +468,16 @@
         "PotentialRating": 68,
         "Wage": 225000
       },
+      "Chairman": {
+        "ID": 3,
+        "FirstName": "Hurley",
+        "Surname": "Jones",
+        "Age": 63,
+        "Happiness": 97,
+        "OverallRating": 82,
+        "PotentialRating": 84,
+        "PersonalFortune": 3299500000
+      },
       "Squad": [
         {
           "ID": 29,
@@ -693,6 +723,16 @@
         "PotentialRating": 41,
         "Wage": 110000
       },
+      "Chairman": {
+        "ID": 4,
+        "FirstName": "Schmidt",
+        "Surname": "Walker",
+        "Age": 28,
+        "Happiness": 90,
+        "OverallRating": 71,
+        "PotentialRating": 81,
+        "PersonalFortune": 7279000000
+      },
       "Squad": [
         {
           "ID": 31,
@@ -937,6 +977,16 @@
         "OverallRating": 27,
         "PotentialRating": 36,
         "Wage": 135000
+      },
+      "Chairman": {
+        "ID": 5,
+        "FirstName": "Mcclain",
+        "Surname": "Farrell",
+        "Age": 39,
+        "Happiness": 35,
+        "OverallRating": 86,
+        "PotentialRating": 99,
+        "PersonalFortune": 9040500000
       },
       "Squad": [
         {
@@ -1238,6 +1288,16 @@
         "PotentialRating": 56,
         "Wage": 230000
       },
+      "Chairman": {
+        "ID": 6,
+        "FirstName": "Nicholson",
+        "Surname": "Horne",
+        "Age": 81,
+        "Happiness": 36,
+        "OverallRating": 25,
+        "PotentialRating": 40,
+        "PersonalFortune": 4953000000
+      },
       "Squad": [
         {
           "ID": 63,
@@ -1493,6 +1553,16 @@
         "OverallRating": 64,
         "PotentialRating": 64,
         "Wage": 320000
+      },
+      "Chairman": {
+        "ID": 7,
+        "FirstName": "Knapp",
+        "Surname": "Richmond",
+        "Age": 34,
+        "Happiness": 59,
+        "OverallRating": 26,
+        "PotentialRating": 48,
+        "PersonalFortune": 8996500000
       },
       "Squad": [
         {
@@ -1783,6 +1853,16 @@
         "PotentialRating": 72,
         "Wage": 345000
       },
+      "Chairman": {
+        "ID": 8,
+        "FirstName": "Lewis",
+        "Surname": "Rice",
+        "Age": 69,
+        "Happiness": 36,
+        "OverallRating": 72,
+        "PotentialRating": 97,
+        "PersonalFortune": 2666000000
+      },
       "Squad": [
         {
           "ID": 16,
@@ -1950,6 +2030,16 @@
         "OverallRating": 60,
         "PotentialRating": 63,
         "Wage": 300000
+      },
+      "Chairman": {
+        "ID": 9,
+        "FirstName": "Atkinson",
+        "Surname": "Weaver",
+        "Age": 68,
+        "Happiness": 69,
+        "OverallRating": 78,
+        "PotentialRating": 88,
+        "PersonalFortune": 781000000
       },
       "Squad": [
         {
@@ -2163,6 +2253,16 @@
         "PotentialRating": 76,
         "Wage": 235000
       },
+      "Chairman": {
+        "ID": 10,
+        "FirstName": "Gomez",
+        "Surname": "Kemp",
+        "Age": 72,
+        "Happiness": 55,
+        "OverallRating": 68,
+        "PotentialRating": 81,
+        "PersonalFortune": 8267500000
+      },
       "Squad": [
         {
           "ID": 20,
@@ -2352,6 +2452,16 @@
         "OverallRating": 72,
         "PotentialRating": 97,
         "Wage": 360000
+      },
+      "Chairman": {
+        "ID": 11,
+        "FirstName": "Underwood",
+        "Surname": "Hoffman",
+        "Age": 60,
+        "Happiness": 37,
+        "OverallRating": 23,
+        "PotentialRating": 60,
+        "PersonalFortune": 7349500000
       },
       "Squad": [
         {
@@ -2642,6 +2752,16 @@
         "PotentialRating": 48,
         "Wage": 100000
       },
+      "Chairman": {
+        "ID": 12,
+        "FirstName": "Reynolds",
+        "Surname": "Harrington",
+        "Age": 20,
+        "Happiness": 67,
+        "OverallRating": 57,
+        "PotentialRating": 96,
+        "PersonalFortune": 9975000000
+      },
       "Squad": [
         {
           "ID": 80,
@@ -2908,6 +3028,16 @@
         "OverallRating": 26,
         "PotentialRating": 42,
         "Wage": 130000
+      },
+      "Chairman": {
+        "ID": 13,
+        "FirstName": "Taylor",
+        "Surname": "Mcgowan",
+        "Age": 59,
+        "Happiness": 25,
+        "OverallRating": 23,
+        "PotentialRating": 44,
+        "PersonalFortune": 1089000000
       },
       "Squad": [
         {
@@ -3230,6 +3360,16 @@
         "OverallRating": 69,
         "PotentialRating": 83,
         "Wage": 345000
+      },
+      "Chairman": {
+        "ID": 14,
+        "FirstName": "Ray",
+        "Surname": "Hahn",
+        "Age": 24,
+        "Happiness": 76,
+        "OverallRating": 30,
+        "PotentialRating": 56,
+        "PersonalFortune": 9156500000
       },
       "Squad": [
         {
@@ -3586,6 +3726,16 @@
         "PotentialRating": 81,
         "Wage": 350000
       },
+      "Chairman": {
+        "ID": 15,
+        "FirstName": "Roth",
+        "Surname": "Gaines",
+        "Age": 23,
+        "Happiness": 47,
+        "OverallRating": 61,
+        "PotentialRating": 65,
+        "PersonalFortune": 10117500000
+      },
       "Squad": [
         {
           "ID": 7,
@@ -3819,6 +3969,16 @@
         "OverallRating": 20,
         "PotentialRating": 42,
         "Wage": 100000
+      },
+      "Chairman": {
+        "ID": 16,
+        "FirstName": "Pennington",
+        "Surname": "Oneal",
+        "Age": 62,
+        "Happiness": 26,
+        "OverallRating": 22,
+        "PotentialRating": 23,
+        "PersonalFortune": 10923000000
       },
       "Squad": [
         {
@@ -4142,6 +4302,16 @@
         "PotentialRating": 66,
         "Wage": 320000
       },
+      "Chairman": {
+        "ID": 17,
+        "FirstName": "Shannon",
+        "Surname": "Sims",
+        "Age": 79,
+        "Happiness": 56,
+        "OverallRating": 54,
+        "PotentialRating": 79,
+        "PersonalFortune": 2677000000
+      },
       "Squad": [
         {
           "ID": 25,
@@ -4409,6 +4579,16 @@
         "PotentialRating": 99,
         "Wage": 420000
       },
+      "Chairman": {
+        "ID": 18,
+        "FirstName": "Griffith",
+        "Surname": "Adkins",
+        "Age": 56,
+        "Happiness": 60,
+        "OverallRating": 65,
+        "PotentialRating": 85,
+        "PersonalFortune": 2712500000
+      },
       "Squad": [
         {
           "ID": 10,
@@ -4653,6 +4833,16 @@
         "OverallRating": 36,
         "PotentialRating": 63,
         "Wage": 180000
+      },
+      "Chairman": {
+        "ID": 19,
+        "FirstName": "Tillman",
+        "Surname": "Miller",
+        "Age": 21,
+        "Happiness": 43,
+        "OverallRating": 41,
+        "PotentialRating": 79,
+        "PersonalFortune": 8882000000
       },
       "Squad": [
         {
@@ -4920,6 +5110,16 @@
         "OverallRating": 29,
         "PotentialRating": 48,
         "Wage": 145000
+      },
+      "Chairman": {
+        "ID": 20,
+        "FirstName": "Morales",
+        "Surname": "Townsend",
+        "Age": 45,
+        "Happiness": 37,
+        "OverallRating": 67,
+        "PotentialRating": 99,
+        "PersonalFortune": 8447000000
       },
       "Squad": [
         {
