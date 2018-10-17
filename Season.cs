@@ -7,6 +7,7 @@ namespace FootballChairmanTycoonConsoleApp
     public class Season
     {
         public List<FootballPlayer> PlayerList { get; private set; } = new List<FootballPlayer>();
+        public List<FootballChairman> ChairmenList { get; private set; } = JsonReader.ReadJsonChairmenFile();
         public List<FootballClub> ClubList { get; private set; } = JsonReader.ReadJsonClubsFile();
         public List<FootballManager> ManagerList { get; private set; } = JsonReader.ReadJsonManagersFile();
         public FootballLeague League { get; private set; } = JsonReader.ReadJsonLeaguesFile();
@@ -48,6 +49,9 @@ namespace FootballChairmanTycoonConsoleApp
                 TransferSimulation.SimulateTransferDay(ClubList, PlayerList);
                 TransferSimulation.ShowWeeklyTransfers(PlayerList);
             }
+
+            TakeoverSimulation.SimulateTakeovers(ClubList, ChairmenList);
+            TakeoverSimulation.ShowTakeovers(ChairmenList);
 
             var leagueStart = League.Fixtures.First().SeasonWeek;
             var leagueEnd = League.Fixtures.Last().SeasonWeek;

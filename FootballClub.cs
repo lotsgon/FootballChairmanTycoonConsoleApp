@@ -82,6 +82,10 @@ namespace FootballChairmanTycoonConsoleApp
                 this.Reputation -= updatedValue;
             }
         }
+        public void UpdateChairman(FootballChairman chairman)
+        {
+            this.Chairman = chairman;
+        }
 
         public void UpdateMoneyAndValue(int amount)
         {

@@ -14,6 +14,7 @@
         public int PotentialRating { get; private set; }
         public FootballClub CurrentClub { get; private set; }
         public FootballClub PreviousClub { get; private set; }
+        public ChairmanType Type { get; private set; }
         public long PersonalFortune { get; private set; }
         public int Reputation { get; private set; }
         public bool JustMoved { get; private set; }
@@ -44,6 +45,26 @@
             this.PreviousClub = this.CurrentClub;
             this.CurrentClub = newClub;
             this.JustMoved = true;
+            this.Happiness = 100;
+        }
+
+        public void UpdatePersonalFinance(int amount)
+        {
+            this.PersonalFortune += amount;
+        }
+
+        private ChairmanType GetChairmanType(int fortune)
+        {
+            if(fortune > 1000000000)
+            {
+                return ChairmanType.Tycoon;
+            }
+            else if (fortune > 100000000)
+            {
+                return ChairmanType.Consortium;
+            }
+
+            return ChairmanType.FansConsortium;
         }
     }
 }

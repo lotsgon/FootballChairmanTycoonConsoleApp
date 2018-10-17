@@ -25,7 +25,7 @@ namespace FootballChairmanTycoonConsoleApp
             var clubRep = (club.Reputation / 100) + 5;
             var transferBudget = club.Money * 0.75;
 
-            var rand = new Random().Next(0, 300);
+            var rand = new Random().Next(0, playerList.Count-1);
 
             var targetPlayer = playerList.Where(x => club != x.CurrentClub && x.OverallRating < clubRep && !x.JustMoved).ElementAtOrDefault(rand);
 

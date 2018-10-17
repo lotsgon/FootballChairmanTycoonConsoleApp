@@ -16,6 +16,11 @@ namespace FootballChairmanTycoonConsoleApp
             return JsonConvert.DeserializeObject<List<FootballManager>>(File.ReadAllText(@"..\\..\..\JsonData\Managers.json"));
         }
 
+         public static List<FootballChairman> ReadJsonChairmenFile()
+        {
+            return JsonConvert.DeserializeObject<List<FootballChairman>>(File.ReadAllText(@"..\\..\..\JsonData\Chairmen.json"));
+        }
+
         public static FootballLeague ReadJsonLeaguesFile()
         {
             return JsonConvert.DeserializeObject<FootballLeague>(File.ReadAllText(@"..\\..\..\JsonData\EnglishPremierLeague.json"));
