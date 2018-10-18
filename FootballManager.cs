@@ -45,5 +45,10 @@
             this.CurrentClub = newClub;
             this.JustMoved = true;
         }
+
+        public void UpdateJustMoved()
+        {
+            this.JustMoved = !this.JustMoved;
+        }
     }
 }

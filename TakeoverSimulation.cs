@@ -28,8 +28,6 @@ namespace FootballChairmanTycoonConsoleApp
 
         private static void ChairmanTakeover(FootballClub club, List<FootballChairman> chairmanList)
         {
-            // update to 200 if player overall goes to 200
-            var clubRep = (club.Reputation / 100) + 5;
             var value = club.Value;
 
             var rand = new Random().Next(0, chairmanList.Count - 1);
@@ -41,13 +39,15 @@ namespace FootballChairmanTycoonConsoleApp
                 return;
             }
 
-            if (club.Value < targetChairman.PersonalFortune)
+            if (club.Value * 1.2 < targetChairman.PersonalFortune)
             {
                 chairmanList.Add(club.Chairman);
-                club.Chairman.UpdatePersonalFinance(club.Value);
+                club.UpdateMoneyAndValue(-club.Money / 4);
+                club.Chairman.UpdatePersonalFinance(club.Value + (club.Money / 4));
                 club.Chairman.UpdateCurrentClub(null);
 
                 targetChairman.UpdateCurrentClub(club);
+                club.UpdateMoneyAndValue((int)(targetChairman.PersonalFortune * 0.25));
                 targetChairman.UpdatePersonalFinance(-club.Value);
                 chairmanList.Remove(targetChairman);
 

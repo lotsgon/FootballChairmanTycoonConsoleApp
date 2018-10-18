@@ -61,6 +61,8 @@ namespace FootballChairmanTycoonConsoleApp
                 SimulateMatchWeek();
             }
 
+            TransferManagerSimulation.SimulateManagerTransfers(ClubList, ManagerList);
+
             this.Week += 1;
         }
 
@@ -85,7 +87,7 @@ namespace FootballChairmanTycoonConsoleApp
             {
                 var homeTeam = fixture.HomeTeam.Name;
                 var awayTeam = fixture.AwayTeam.Name;
-                var result = MatchSimulation.GetMatchResult(fixture);
+                MatchSimulation.GetMatchResult(fixture);
 
                 Output.WriteLine($"{homeTeam} {fixture.HomeGoals} - {fixture.AwayGoals} {awayTeam}");
             }

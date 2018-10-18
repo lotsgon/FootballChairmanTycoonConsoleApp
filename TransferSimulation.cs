@@ -23,7 +23,7 @@ namespace FootballChairmanTycoonConsoleApp
         {
             // update to 200 if player overall goes to 200
             var clubRep = (club.Reputation / 100) + 5;
-            var transferBudget = club.Money * 0.75;
+            var transferBudget = club.Money * 0.5;
 
             var rand = new Random().Next(0, playerList.Count-1);
 

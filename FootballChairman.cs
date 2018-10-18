@@ -48,12 +48,12 @@
             this.Happiness = 100;
         }
 
-        public void UpdatePersonalFinance(int amount)
+        public void UpdatePersonalFinance(long amount)
         {
             this.PersonalFortune += amount;
         }
 
-        private ChairmanType GetChairmanType(int fortune)
+        private ChairmanType GetChairmanType(long fortune)
         {
             if(fortune > 1000000000)
             {

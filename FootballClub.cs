@@ -20,8 +20,8 @@ namespace FootballChairmanTycoonConsoleApp
         public Vector3 TeamColour { get; private set; }
         public int HomeStadiumCapacity { get; private set; }
         public int Reputation { get; private set; }
-        public int Money { get; private set; }
-        public int Value { get; private set; }
+        public long Money { get; private set; }
+        public long Value { get; private set; }
         public int Morale { get; private set; }
         public List<FootballPlayer> Squad { get; private set; } = new List<FootballPlayer>();
         public ClubStatistics Statistics { get; private set; } = new ClubStatistics();
@@ -30,6 +30,7 @@ namespace FootballChairmanTycoonConsoleApp
         public int OverallLineUpRating { get; private set; }
         public int SquadMinimum { get; private set; } = 16;
         public FootballChairman Chairman { get; private set; }
+        public int BoardHappiness { get; private set; }
 
         public FootballClub(int iD, string name, string longName, string sixLetterName, string city, int leagueID, string nation, int yearFounded, string status, string homeStadium, Vector3 teamColour, int homeStadiumCapacity, List<FootballPlayer> squad, FootballManager manager, FootballChairman chairman)
         {
@@ -51,6 +52,7 @@ namespace FootballChairmanTycoonConsoleApp
             this.Money = this.HomeStadiumCapacity * 7000;
             this.Value = (this.Reputation * 75000) + this.Money;
             this.Morale = 10;
+            this.BoardHappiness = 80;
             this.Manager = manager;
             this.Manager?.SetCurrentClub(this);
             this.Chairman = chairman;
@@ -70,35 +72,46 @@ namespace FootballChairmanTycoonConsoleApp
             this.Squad = squad;
         }
 
-        public void UpdateReputation(int value, bool increase)
+        public void UpdateReputation(int value)
         {
             var updatedValue = (int)Math.Round(value * 0.11f, 0);
-            if (increase)
-            {
-                this.Reputation += updatedValue;
-            }
-            else
-            {
-                this.Reputation -= updatedValue;
-            }
+
+            Math.Max(Math.Min(this.Reputation += updatedValue, 10000),0);
         }
+
+        public void UpdateManager(FootballManager manager)
+        {
+            this.Manager = manager;
+            this.BoardHappiness = 80;
+        }
+
+        public void UpdateBoardHappiness(int value)
+        {
+            Math.Max(Math.Min(this.BoardHappiness += value, 100),0);
+        }
+
+        public void UpdateMorale(int value)
+        {
+            Math.Max(Math.Min(this.Morale += value, 20), 0);
+        }
+
         public void UpdateChairman(FootballChairman chairman)
         {
             this.Chairman = chairman;
         }
 
-        public void UpdateMoneyAndValue(int amount)
+        public void UpdateMoneyAndValue(long amount)
         {
             this.Value += amount;
             this.Money += amount;
         }
 
-        public void UpdateValue(int amount)
+        public void UpdateValue(long amount)
         {
             this.Value += amount;
         }
 
-        public void UpdateMoney(int amount)
+        public void UpdateMoney(long amount)
         {
             this.Money += amount;
         }

@@ -4,7 +4,7 @@ namespace FootballChairmanTycoonConsoleApp
 {
     public static class MatchSimulation
     {
-        public static MatchResult GetMatchResult(LeagueFixture fixture)
+        public static void GetMatchResult(LeagueFixture fixture)
         {
             var matchScore = GetMatchScore(fixture);
             fixture.SetFixtureResult(matchScore.HomeGoals, matchScore.AwayGoals);
@@ -13,14 +13,23 @@ namespace FootballChairmanTycoonConsoleApp
 
             if (matchScore.HomeGoals > matchScore.AwayGoals)
             {
-                return MatchResult.Win;
+                fixture.HomeTeam.UpdateBoardHappiness(5);
+                fixture.HomeTeam.UpdateMorale(1);
+                fixture.AwayTeam.UpdateBoardHappiness(-3);
+                fixture.AwayTeam.UpdateMorale(-1);
+                return;
             }
             else if (matchScore.AwayGoals > matchScore.HomeGoals)
             {
-                return MatchResult.Lose;
+                fixture.HomeTeam.UpdateBoardHappiness(-8);
+                fixture.HomeTeam.UpdateMorale(-1);
+                fixture.AwayTeam.UpdateBoardHappiness(6);
+                fixture.AwayTeam.UpdateMorale(1);
+                return;
             }
 
-            return MatchResult.Draw;
+            fixture.HomeTeam.UpdateMorale(-3);
+            fixture.AwayTeam.UpdateMorale(1);
         }
 
         private static MatchScore GetMatchScore(LeagueFixture fixture)
@@ -39,18 +48,18 @@ namespace FootballChairmanTycoonConsoleApp
 
             if (homeRate > awayRate)
             {
-                matchScore.HomeGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, homeRate + 2) - rand.Next(0, homeRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.8f) + 0.3f))))), 0, 15);
-                matchScore.AwayGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, awayRate) - rand.Next(0, awayRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.5f) + 0.3f))))), 0, 15);
+                matchScore.HomeGoals += Math.Max((int)(Math.Floor((Math.Abs(rand.Next(0, Math.Max(homeRate + 2, 1)) - rand.Next(0, Math.Max(homeRate, 1)))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.8f) + 0.3f))))), 0);
+                matchScore.AwayGoals += Math.Max((int)(Math.Floor((Math.Abs(rand.Next(0, Math.Max(awayRate, 1)) - rand.Next(0, Math.Max(awayRate, 1)))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.5f) + 0.3f))))), 0);
             }
             else if (awayRate > homeRate)
             {
-                matchScore.HomeGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, homeRate) - rand.Next(0, homeRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.4f) + 0.3f))))), 0, 15);
-                matchScore.AwayGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, awayRate) - rand.Next(0, awayRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.7f) + 0.3f))))), 0, 15);
-            }
-            else
-            {
-                matchScore.HomeGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, homeRate) - rand.Next(0, homeRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.6f) + 0.3f))))), 0, 15);
-                matchScore.AwayGoals += Math.Clamp((int)(Math.Floor((Math.Abs(rand.Next(0, awayRate) - rand.Next(0, awayRate))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.6f) + 0.3f))))), 0, 15);
+                matchScore.HomeGoals += Math.Max((int)(Math.Floor((Math.Abs(rand.Next(0, Math.Max(homeRate, 1)) - rand.Next(0, Math.Max(homeRate, 1)))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.4f) + 0.3f))))), 0);
+                matchScore.AwayGoals += Math.Max((int)(Math.Floor((Math.Abs(rand.Next(0, Math.Max(awayRate, 1)) - rand.Next(0, Math.Max(awayRate, 1)))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.7f) + 0.3f))))), 0);
+            }                                
+            else                             
+            {                                
+                matchScore.HomeGoals += Math.Max((int)(Math.Floor((Math.Abs(rand.Next(0, Math.Max(homeRate, 1)) - rand.Next(0, Math.Max(homeRate, 1)))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.6f) + 0.3f))))), 0);
+                matchScore.AwayGoals += Math.Max((int)(Math.Floor((Math.Abs(rand.Next(0, Math.Max(awayRate, 1)) - rand.Next(0, Math.Max(awayRate, 1)))) * (((rand.NextDouble() + rand.NextDouble()) * ((0.1f + 0.6f) + 0.3f))))), 0);
             }
 
             return matchScore;
