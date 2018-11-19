@@ -1,5 +1,5 @@
 ﻿using EasyConsole;
-using FootballChairmanTycoonConsoleApp;
+using FootballSimulationGameLibrary;
 using System.Collections.Generic;
 using System.Linq;
 

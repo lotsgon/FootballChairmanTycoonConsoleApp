@@ -1,5 +1,5 @@
 ﻿using EasyConsole;
-using FootballChairmanTycoonConsoleApp;
+using FootballSimulationGameLibrary;
 
 namespace Demo.Pages
 {

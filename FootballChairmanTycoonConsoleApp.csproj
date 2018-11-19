@@ -6,11 +6,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ClubStatistics.cs" />
+    <Compile Remove="FootballChairman.cs" />
+    <Compile Remove="FootballClub.cs" />
+    <Compile Remove="FootballLeague.cs" />
+    <Compile Remove="FootballManager.cs" />
+    <Compile Remove="FootballPlayer.cs" />
+    <Compile Remove="JsonReader.cs" />
+    <Compile Remove="LeagueFixture.cs" />
+    <Compile Remove="LeagueFixtureRound.cs" />
+    <Compile Remove="ManagerFormation.cs" />
+    <Compile Remove="ManagerFormations.cs" />
+    <Compile Remove="MatchResult.cs" />
+    <Compile Remove="MatchScore.cs" />
+    <Compile Remove="MatchSimulation.cs" />
+    <Compile Remove="PlayerPosition.cs" />
+    <Compile Remove="Season.cs" />
+    <Compile Remove="TakeoverSimulation.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EasyConsole\EasyConsole\EasyConsole.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FootballSimulationGameLibrary">
+      <HintPath>..\FootballSimulationGameLibrary\FootballSimulationGameLibrary\bin\Debug\FootballSimulationGameLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

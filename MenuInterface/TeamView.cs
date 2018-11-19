@@ -1,5 +1,5 @@
 ﻿using EasyConsole;
-using FootballChairmanTycoonConsoleApp;
+using FootballSimulationGameLibrary;
 
 namespace Demo.Pages
 {
@@ -26,7 +26,23 @@ namespace Demo.Pages
             Output.WriteLine($"Chairman: {Club.Chairman.FullName}");
             Output.WriteLine($"Chairman Fortune: {Club.Chairman.PersonalFortune:C2}");
             Output.WriteLine("Squad:");
-            Club.ShowSquadList();
+
+            var orderedSquad = Club.GetSquadList();
+
+            Output.WriteLine("{0,0}{1,10}{2,20}{3,10}",
+                              "Pos",
+                              "Age",
+                              "Name",
+                              "Ovr");
+
+            foreach (FootballPlayer player in orderedSquad)
+            {
+                Output.WriteLine("{0,0} {1,10}{2,20}{3,10}",
+                              player.Position,
+                              player.Age,
+                              player.ShortName,
+                              player.OverallRating);
+            }
 
             Input.ReadString("Press [Enter] to navigate home");
             Program.NavigateHome();

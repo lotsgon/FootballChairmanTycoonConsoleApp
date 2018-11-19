@@ -1,7 +1,6 @@
 ﻿using Demo.Pages;
 using EasyConsole;
-using FootballChairmanTycoonConsoleApp;
-using System.Collections.Generic;
+using FootballSimulationGameLibrary;
 
 namespace Demo
 {
